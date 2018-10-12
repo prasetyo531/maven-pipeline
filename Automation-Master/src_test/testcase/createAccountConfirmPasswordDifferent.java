@@ -96,7 +96,7 @@ public class createAccountConfirmPasswordDifferent extends controller {
 		assertCompProfile asserComProf = new assertCompProfile(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -156,7 +156,7 @@ public class createAccountConfirmPasswordDifferent extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("confirm password different");

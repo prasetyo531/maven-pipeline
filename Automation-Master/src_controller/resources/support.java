@@ -97,7 +97,7 @@ public class support {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-	FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+	FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//Workbook1.xls");
 
 	Workbook wb = Workbook.getWorkbook(filepath);
 	Sheet sheet = wb.getSheet("existing");
