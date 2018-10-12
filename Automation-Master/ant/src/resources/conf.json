@@ -1,0 +1,15 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "myjneandroid1",
+  "key": "UzHrs5MLAkMsuSzzHzsV",
+
+  "capabilities": {
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome"
+    }
+  }
+}

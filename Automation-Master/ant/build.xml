@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="UTFramework" default="copytest-output" basedir=".">
+
+	<!-- bin:all class/ -->
+	<!-- src:all java file/ -->
+	<!-- test-output:report generation/ -->
+	<!-- lib:all dependent jar/ -->
+
+		
+	<target name="delete">
+		<delete dir="bin" />
+		<delete dir="src" />
+		<delete dir="test-output" />
+		<delete dir="lib" />
+	</target>
+
+	<target name="create" depends="delete">
+		<mkdir dir="bin"/>
+		<mkdir dir="src"/>
+		<mkdir dir="test-output"/>
+		<mkdir dir="lib"/>
+	</target>
+	
+	<target name="copysrc" depends="create">
+		<copydir dest="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/ant/src" src="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/src"></copydir>
+<!--		<copy todir="/Users/mac/Documents/Automation Tools/automation-uangteman-testng/workspace2/UTFramework/ant/lib" overwrite="true">  /-->
+			<fileset dir="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/src" excludes="**/*.jar"></fileset>
+<!--		</copy> /-->
+	</target>
+	
+	<target name="copylib" depends="copysrc">
+			<copydir dest="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/ant/lib" src="/Users/mac/Documents/download/lib"></copydir>
+			<fileset dir="/Users/mac/Documents/download/lib" includes="**/*.jar"></fileset>
+	</target>
+	
+	<target name="copytest-output" depends="copylib">
+			<copydir dest="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/ant/test-output" src="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/test-output"></copydir>
+			<fileset dir="/Users/mac/Downloads/kerja/fabelio/automatio-fabelio-branch1/automatio-fabelio-branch1/Fabelio-Master/test-output"></fileset>
+	</target>
+
+</project>

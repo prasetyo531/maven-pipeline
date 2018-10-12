@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" verbose="2" thread-count="1">
+  <test name="Test">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccount"/>
+     </classes>
+  </test>
+  <test name="Test2">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountConfirmPasswordDifferent"/>
+     </classes>
+  </test>
+  <test name="Test3">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountInvalidFormatEmail"/>
+     </classes>
+  </test>
+  <test name="Test4">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountPasswordLess6"/>
+     </classes>
+  </test>
+  <test name="Test5">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountSkipConcern"/>
+     </classes>
+  </test>
+  <test name="Test6">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountSkipPhotoLocation"/>
+     </classes>
+  </test>
+  <test name="Test7">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountUncheckTerms"/>
+     </classes>
+  </test>
+  <test name="Test8">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountUsernameLess3"/>
+     </classes>
+  </test>
+  <test name="Test9">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountUsingRegisteredEmail"/>
+     </classes>
+  </test>
+  <test name="Test10">
+  <parameter name="browser" value="chrome"/>
+        <classes>
+      <class name="testcase.createAccountUsingRegisteredUsername"/>
+     </classes>
+  </test>
+</suite> <!-- Suite -->

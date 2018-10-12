@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="138956" started-at="2018-01-11T10:09:07Z" finished-at="2018-01-11T10:11:26Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="138956" started-at="2018-01-11T10:09:07Z" finished-at="2018-01-11T10:11:26Z">
+      <class name="testcase.CheckoutLoginSnap">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testcase.CheckoutLoginSnap@210366b4]" name="beforeMethod" is-config="true" duration-ms="11773" started-at="2018-01-11T17:09:08Z" finished-at="2018-01-11T17:09:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="scenario_satu()[pri:0, instance:testcase.CheckoutLoginSnap@210366b4]" name="scenario_satu" duration-ms="127163" started-at="2018-01-11T17:09:19Z" finished-at="2018-01-11T17:11:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario_satu -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testcase.CheckoutLoginSnap@210366b4]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-01-11T17:11:26Z" finished-at="2018-01-11T17:11:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testcase.CheckoutLoginSnap -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
