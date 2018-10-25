@@ -1,4 +1,4 @@
-package testcase;
+package tc_createAccount;
 
 import static org.testng.Assert.assertTrue;
 
