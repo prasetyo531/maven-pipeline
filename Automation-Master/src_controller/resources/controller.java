@@ -26,11 +26,12 @@ public class controller {
 	
 	public static String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	public static Properties prop=null;
+	public static String workingDir = System.getProperty("user.dir");
 
 	public static final RemoteWebDriver getDriver(String browser) throws IOException {
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		
 		prop.load(fis);
 		String url1=prop.getProperty("machine1");
@@ -41,7 +42,7 @@ public class controller {
 	public static final RemoteWebDriver getDriver2(String browser2) throws IOException {
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		
 		prop.load(fis);
 		String url2=prop.getProperty("machine2");
@@ -52,7 +53,7 @@ public class controller {
 	public static final RemoteWebDriver getDriver3(String browser3) throws IOException {
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		
 		prop.load(fis);
 		String url3=prop.getProperty("machine3");
