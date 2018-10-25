@@ -1,4 +1,4 @@
-package testcase;
+package tc_addProduct;
 
 import static org.testng.Assert.assertTrue;
 

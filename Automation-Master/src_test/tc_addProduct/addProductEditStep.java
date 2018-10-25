@@ -1,4 +1,4 @@
-package testcase;
+package tc_addProduct;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -46,11 +45,13 @@ import pageObjects.ProductPage;
 import pageObjects.addproductpage;
 import pageObjects.homepage;
 import pageObjects.login;
+import pageObjects.productdetail;
+import pageObjects.productlist;
 import resources.ConnectDB;
 import resources.controller;
 import resources.support;
 
-public class addProductImageUrl extends controller {
+public class addProductEditStep extends controller {
 	
 public static Logger log =LogManager.getLogger(support.class.getName());
 	
@@ -73,10 +74,11 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	public void scenario_satu(String email,String password,String alamat,String telepon) throws Exception {
 		
 		support supp= new support();
-		ConnectDB db=new ConnectDB();
 		homepage home = new homepage(driver);
 		login logpro = new login(driver);
 		addproductpage productpage = new addproductpage(driver);
+		productlist prodlist = new productlist(driver);
+		productdetail proddet = new productdetail(driver);;
 		
 		categoryPage cat = new categoryPage(driver);
 		ProductPage prod = new ProductPage(driver);
@@ -142,22 +144,11 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		//step 1
 		WebElement focusInputUrl= productpage.insertUrl(); //insert invalid url
 	    Actions onfocusInputUrl = new Actions(driver);
-	    onfocusInputUrl.moveToElement(focusInputUrl).click();
-	    onfocusInputUrl.sendKeys("https://i.kinja-img.com/kampret/image/upload/s--nncnCKWW--/c_scale,f_auto,fl_progressive,q_80,w_800/17hyh5lm9yhjvjpg.jpg");
-	    onfocusInputUrl.build().perform();
-	    
-	    productpage.clickShowLinkImage().click();
-	    
-	    (new WebDriverWait(driver, 15)).until(ExpectedConditions.alertIsPresent()); //find alert
-	    Alert alert = driver.switchTo().alert();
-        System.out.println(alert.getText());
-        alert.accept();
-	    
 	    onfocusInputUrl.moveToElement(focusInputUrl).click();	//insert valid url
 	    onfocusInputUrl.sendKeys("https://i.kinja-img.com/gawker-media/image/upload/s--nncnCKWW--/c_scale,f_auto,fl_progressive,q_80,w_800/17hyh5lm9yhjvjpg.jpg");
 	    onfocusInputUrl.build().perform();
 		
-	    productpage.clickShowLinkImage().click();
+		productpage.clickShowLinkImage().click();
 		
 		asserAddProd.buttonnext1enable();
 		
@@ -170,6 +161,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
        
        productpage.nextStep1().click();
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       
        //step 2
        WebElement focusbrand= productpage.selectBrand(); //xpath megamenu nya  
        Actions onfocusbrand = new Actions(driver);
@@ -216,9 +208,24 @@ public static Logger log =LogManager.getLogger(support.class.getName());
        productpage.inputPrice().click();
        productpage.inputPrice().sendKeys("100000");
        productpage.inputDescription().click();
-       productpage.inputDescription().sendKeys("add product using url of image");
+       productpage.inputDescription().sendKeys("add product edit step");
        
+       //edit step 1
+       productpage.editStep1().click();
+       Thread.sleep(2000);
+       productpage.nextStep1().click();
+       
+       //edit step 2
+       productpage.editStep2().click();
+       productpage.nextStep2().click();
+       
+       //edit step 3
+       productpage.editStep3().click();
+       productpage.nextStep3().click();
+       
+       //submit
        productpage.clickSubmit().click();
+       
        
        UrlPageDetail = driver.getCurrentUrl();
        System.out.println(UrlPageDetail);
@@ -233,14 +240,14 @@ public static Logger log =LogManager.getLogger(support.class.getName());
        Integer beautyPointsactual =  beautyPointscurrent+10;
        System.out.println(beautyPointsactual);
        assertTrue(beautyPointsactual.equals(beautyPointexpected));
-
+       
 	}
-     
+	
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
 			System.out.println("Closing browser");
-			//driver.close();
+			driver.close();
 		}
 	}
 	
@@ -278,4 +285,5 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		     filepath.close();
 		     return Testdata;
 		     }
+
 }

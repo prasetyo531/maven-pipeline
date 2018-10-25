@@ -6,8 +6,8 @@
     <groups>
     </groups>
     <test name="Default test" duration-ms="307" started-at="2018-09-25T09:59:34Z" finished-at="2018-09-25T09:59:34Z">
-      <class name="testcase.addProduct">
-        <test-method status="FAIL" signature="setUp(java.lang.String)[pri:0, instance:testcase.addProduct@3943a2be]" name="setUp" is-config="true" duration-ms="0" started-at="2018-09-25T09:59:34Z" finished-at="2018-09-25T09:59:34Z">
+      <class name="tc_addProduct.addProduct">
+        <test-method status="FAIL" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProduct@3943a2be]" name="setUp" is-config="true" duration-ms="0" started-at="2018-09-25T09:59:34Z" finished-at="2018-09-25T09:59:34Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -45,7 +45,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcase.addProduct@3943a2be]" name="scenario_satu" duration-ms="0" started-at="2018-09-25T09:59:34Z" data-provider="existingCust" finished-at="2018-09-25T09:59:34Z">
+        <test-method status="SKIP" signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProduct@3943a2be]" name="scenario_satu" duration-ms="0" started-at="2018-09-25T09:59:34Z" data-provider="existingCust" finished-at="2018-09-25T09:59:34Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -83,11 +83,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method status="SKIP" signature="tearDown()[pri:0, instance:testcase.addProduct@3943a2be]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-09-25T09:59:34Z" finished-at="2018-09-25T09:59:34Z">
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:tc_addProduct.addProduct@3943a2be]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-09-25T09:59:34Z" finished-at="2018-09-25T09:59:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcase.addProduct -->
+      </class> <!-- tc_addProduct.addProduct -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

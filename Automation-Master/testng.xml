@@ -4,7 +4,7 @@
   <test name="Test1">
   <parameter name="browser" value="chrome"/>
         <classes>
-      <class name="tc_createAccount.createAccount"/>
+      <class name="tc_addProduct.addProduct"/>
      </classes>
   </test>
 </suite> <!-- Suite -->
