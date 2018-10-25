@@ -104,7 +104,7 @@ public class createAccount extends controller {
 //		AssertElement asser = new AssertElement(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -348,7 +348,7 @@ public class createAccount extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("Create account success");

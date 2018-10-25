@@ -23,7 +23,6 @@ public class controller {
 
 	//ensure the geckodriver located in same folder with selenium server
 	
-	
 	public static String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	public static Properties prop=null;
 	public static String workingDir = System.getProperty("user.dir");

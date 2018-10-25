@@ -93,14 +93,14 @@ public class createAccountSkipPhotoLocation extends controller{
 		
 		assertCompProfile asserComProf = new assertCompProfile(driver);
 //		AssertElement asser = new AssertElement(driver);
-		
+
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
-		
+
 		if(testenv.equalsIgnoreCase("prod")){
-        	driver.navigate().to("http://femaledaily.net/");  //https://dev.uangteman.net/a/NHeHv
+        	driver.navigate().to("http://femaledaily.com/");  //https://dev.uangteman.net/a/NHeHv
              driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         	} else {
         		driver.navigate().to("http://femaledaily.net/");  //https://dev.uangteman.net/a/NHeHv
@@ -297,7 +297,7 @@ public class createAccountSkipPhotoLocation extends controller{
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//maven-pipeline//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("Create account skip location");
