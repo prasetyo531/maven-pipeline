@@ -21,7 +21,7 @@ public class homepage {
 	
 	By joinletter=By.xpath("/html/body/div[4]/div/div/div[2]/p[2]/a");
 	By joinletterReviewPage=By.cssSelector("body > div:nth-child(6) > div > div > div.jsx-3828308350.modal-join-content-right > p:nth-child(3) > a");
-	By pointaddproduct=By.cssSelector("#__next > div > div > div.jsx-1986071017.gbheader > div.jsx-1986071017.gbheader-right > div.gbheader-add-area");
+	By pointaddproduct=By.cssSelector("div[class='gbheader-add-area']");
 	By pointloginlogout=By.cssSelector("#__next > div > div > div.jsx-1986071017.gbheader > div.jsx-1986071017.gbheader-right > div.gbheader-userprofile");
 	By clickaddproduct=By.linkText("Add Product");
 	By clicklogin=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[2]/div/a");
