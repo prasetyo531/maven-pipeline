@@ -1,6 +1,4 @@
-package testcase;
-
-import static org.testng.Assert.assertTrue;
+package tc_categoryList;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -46,10 +44,11 @@ import pageObjects.homepage;
 import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
+import pageObjects.reviewsPage;
 import resources.controller;
 import resources.support;
 
-public class addReviewGuest extends controller {
+public class addReviewReviewsPage extends controller {
 	
 public static Logger log =LogManager.getLogger(support.class.getName());
 	
@@ -58,6 +57,8 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	public static Properties prop=null;
 	
 	public String UrlLogin = null;
+	public String UrlPageDetail = null;
+	public String UrlReviewReviewsPage = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -76,6 +77,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		addproductpage productpage = new addproductpage(driver);
 		productlist prodlist = new productlist(driver);
 		productdetail proddet = new productdetail(driver);
+		reviewsPage rev = new reviewsPage(driver);
 		
 		assertHome asser = new assertHome(driver);
 		categoryPage cat = new categoryPage(driver);
@@ -84,7 +86,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -103,36 +105,45 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		//on browser
 		home.letmejoinletter().click();
 		
-		WebElement getmenu= home.getMenuBody(); //xpath megamenu nya
-		Actions act = new Actions(driver);
-		act.moveToElement(getmenu).perform();
-		
-		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Hand Cream")));
-
-		WebElement clickElement= driver.findElement(By.linkText("Hand Cream"));//xpath sub megamenu nya
-		act.moveToElement(clickElement).click().perform();
-		
-		asser.getDataProductList();
-		
-		WebElement getaddreview= prodlist.pointAddReviewProdList();
-		Actions act2 = new Actions(driver);
-		act2.moveToElement(getaddreview).perform();
-		(new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("ADD REVIEW")));
-		WebElement clickElemen2= driver.findElement(By.linkText("ADD REVIEW"));//xpath sub megamenu nya
-		act.moveToElement(clickElemen2).click().perform();
-		
-		prodlist.foundAddReviewProdList().click();
-		
-		asser.waitPageDetail();
-		
-		proddet.clickAddReview().click();
-		
+		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/");
 		
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );	
-	
+		logpro.fillusername().sendKeys("putwid");
+		logpro.fillpassword().sendKeys("tester123");
+		logpro.clickbuttonlogin().click();
+		
+		asser.welcomingpopup();
+		
+		home.clickMenuReview().click();
+		asser.waitNewestReview();
+
+		UrlReviewReviewsPage = driver.getCurrentUrl();
+		Assert.assertEquals(UrlReviewReviewsPage, "http://reviews.femaledaily.net/");
+		
+		rev.clickAddReview().click();
+		asser.waitPopularProducts();
+		
+		//scroll down
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", rev.LastPopularProd());
+		
+		WebElement getaddreview= rev.LastPopularProd();
+		Actions act = new Actions(driver);
+		act.moveToElement(getaddreview).perform();
+		(new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='top-page']/div[2]/div[2]/div[20]/div[1]/div/button")));
+		WebElement clickElemen= driver.findElement(By.xpath("//*[@id='top-page']/div[2]/div[2]/div[20]/div[1]/div/button"));//xpath sub megamenu nya
+		act.moveToElement(clickElemen).click().perform();
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-	
+
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
@@ -151,7 +162,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -174,10 +185,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		       }
 		     filepath.close();
 		     return Testdata;
-		     }
+	
+	}
 	
 }
-
-	
-	
-	

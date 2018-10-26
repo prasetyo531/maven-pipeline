@@ -1,6 +1,4 @@
-package testcase;
-
-import static org.testng.Assert.assertTrue;
+package tc_categoryList;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -49,17 +47,15 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class filterByBrand extends controller {
+public class sortingProductList extends controller {
 	
-public static Logger log =LogManager.getLogger(support.class.getName());
+	public static Logger log =LogManager.getLogger(support.class.getName());
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
 	public static Properties prop=null;
 	
-	public String UrlLogin = null;
-	public String UrlBeforeBrand = null;
-	public String UrlAfterBrand = null;
+	public String UrlPage1 = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -86,7 +82,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -114,66 +110,68 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		WebElement clickElement= driver.findElement(By.linkText("Hand Cream"));//xpath sub megamenu nya
 		act.moveToElement(clickElement).click().perform();
 		
-		UrlBeforeBrand = driver.getCurrentUrl();
-		
-		Assert.assertEquals(UrlBeforeBrand, "http://reviews.femaledaily.net/hand-foot/hand-cream?brand=&order=popular&page=1" );	
+		UrlPage1 = driver.getCurrentUrl();
+		Assert.assertEquals(UrlPage1, "http://reviews.femaledaily.net/hand-foot/hand-cream?brand=&order=popular&page=1" );
 		
 		asser.getDataProductList();
 		
-		prodlist.clickBrand100Pure().click();
-		(new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#top-page > div.jsx-2784532334.ctg-cover > div.jsx-2784532334.ctg-right > div.jsx-2784532334.ctg-list-item")));
-		Thread.sleep(2000);
+		prodlist.clickSortProdList().click();
+		asser.getDataProductList();
+		
 		System.out.println("                                                                                             ");
+		System.out.println("                                                                                             ");
+		
+		asser.waitSortOption();
+		prodlist.chooseSortHighest().click();
+		Thread.sleep(2000);
 		asser.getDataProductList();
 		
-		UrlAfterBrand = driver.getCurrentUrl();
-		
-		Assert.assertEquals(UrlAfterBrand, "http://reviews.femaledaily.net/hand-foot/hand-cream?brand=2564&order=popular&page=1" );	
-		
-		
+		System.out.println("                                                                                             ");
+		System.out.println("                                                                                             ");
 	}
-	
-	@AfterMethod
-	public void tearDown() {
-		if(driver!=null) {
-			System.out.println("Closing browser");
-			//driver.close();
+
+		@AfterMethod
+		public void tearDown() {
+			if(driver!=null) {
+				System.out.println("Closing browser");
+				//driver.close();
+			}
 		}
+		
+		public void ExtractJSLogs() {
+	        LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
+	        for (LogEntry entry : logEntries) {
+	            System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
+	        }
+	    }
+		
+		@DataProvider	  
+		public Object[][] existingCust() throws Exception {
+		     
+			FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
+	
+			Workbook wb = Workbook.getWorkbook(filepath);
+			Sheet sheet = wb.getSheet("existing");
+	
+			int row = sheet.getRows();
+			System.out.println("number of rows"+row);
+			int column = sheet.getColumns();
+			System.out.println("number of columns"+column);
+			String Testdata[][] = new String[row-1][column];
+			int count=0;
+	
+			     for (int i = 1; i < row; i++)
+			     	{
+			    	 for (int j = 0; j < column; j++)
+			    	 {
+			    		 Cell cell = sheet.getCell(j, i);
+			    		 Testdata[count][j] = cell.getContents();
+			     	}
+			    	 count++;
+			       }
+			     filepath.close();
+			     return Testdata;
+			     }
+	
 	}
-	
-	public void ExtractJSLogs() {
-        LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
-        for (LogEntry entry : logEntries) {
-            System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
-        }
-    }
-	
-	@DataProvider	  
-	public Object[][] existingCust() throws Exception {
-	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
 
-		Workbook wb = Workbook.getWorkbook(filepath);
-		Sheet sheet = wb.getSheet("existing");
-
-		int row = sheet.getRows();
-		System.out.println("number of rows"+row);
-		int column = sheet.getColumns();
-		System.out.println("number of columns"+column);
-		String Testdata[][] = new String[row-1][column];
-		int count=0;
-
-		     for (int i = 1; i < row; i++)
-		     	{
-		    	 for (int j = 0; j < column; j++)
-		    	 {
-		    		 Cell cell = sheet.getCell(j, i);
-		    		 Testdata[count][j] = cell.getContents();
-		     	}
-		    	 count++;
-		       }
-		     filepath.close();
-		     return Testdata;
-		     }
-
-}
