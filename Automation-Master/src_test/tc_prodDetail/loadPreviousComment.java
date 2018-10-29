@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -50,7 +50,8 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class addCommentReviewPageTwo extends controller {
+
+public class loadPreviousComment extends controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -93,7 +94,7 @@ public class addCommentReviewPageTwo extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -123,51 +124,49 @@ public class addCommentReviewPageTwo extends controller {
 		asser.welcomingpopup();
 		
 		//homepage
-		WebElement getmenu= home.getMenuHair(); //xpath megamenu nya
+		WebElement getmenu= home.getMenuSkincare(); //xpath megamenu nya
 		Actions act = new Actions(driver);
 		act.moveToElement(getmenu).perform();
 		
-		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Vitamin & Serum")));
+		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Wash-Off")));
 
-		WebElement clickElement= driver.findElement(By.linkText("Vitamin & Serum"));//xpath sub megamenu nya
+		WebElement clickElement= driver.findElement(By.linkText("Wash-Off"));//xpath sub megamenu nya
 		act.moveToElement(clickElement).click().perform();
 		
 		asser.getDataProductList();
 		
-		WebElement getaddreview= prodlist.pointAddReviewProdList();
+		WebElement getaddreview= prodlist.pointProdHimalayan();
 		Actions act2 = new Actions(driver);
 		act2.moveToElement(getaddreview).perform();
 		(new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("ADD REVIEW")));
 		WebElement clickElemen2= driver.findElement(By.linkText("ADD REVIEW"));//xpath sub megamenu nya
 		act.moveToElement(clickElemen2).click().perform();
 		
-		prodlist.foundAddReviewProdList().click();
-		
-		asser.waitPageDetail();
-		
-		proddet.clickPage3().click();
+		proddet.clickFilterBySkin().click();
+		proddet.chooseSkinOily().click();
 		Thread.sleep(2000);
-		UrlProdDetPage3 = driver.getCurrentUrl();
-		Assert.assertEquals(UrlProdDetPage3, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=3" );
 		
-		proddet.clickPrevPageProdDet().click();
+		proddet.clickFilterByAge().click();
+		proddet.chooseAge30till34().click();
 		Thread.sleep(2000);
-		UrlProdDetPagePrev = driver.getCurrentUrl();
-		Assert.assertEquals(UrlProdDetPagePrev, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=2" );
 		
-		proddet.clickNextPageProdDet().click();
+		proddet.clickSortProDett().click();
+		proddet.chooseMostLike().click();
 		Thread.sleep(2000);
-		UrlProdDetPageNext = driver.getCurrentUrl();
-		Assert.assertEquals(UrlProdDetPageNext, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=3" );
 		
-		//click comment
-		proddet.getReviewInPage3().click();
-//		asser.waitPageReviewDesc();
-//	    proddet.findCommentField().sendKeys("comment 1");
-//	    Thread.sleep(2000);
-	       
-//	    proddet.clickPostComment().click();
-	       
+		proddet.clickComment().click();
+	    asser.waitPageReviewDesc();
+	    
+	    Thread.sleep(2000);
+	    
+	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559']"));
+	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559 modal-review']"));
+	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559 modal-feed-scroll']"));
+	    
+	    JavascriptExecutor js = ((JavascriptExecutor) driver);
+	    js.executeScript("window.scrollTo(1306,1158, document.body.scrollHeight);");
+	    
+	    proddet.clickLoadMoreCommentButton().click();
 		
 	}
 	
@@ -189,7 +188,7 @@ public class addCommentReviewPageTwo extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");

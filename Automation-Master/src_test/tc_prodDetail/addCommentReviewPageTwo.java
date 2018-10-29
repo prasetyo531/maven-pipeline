@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -49,7 +50,12 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class filterReviewAge extends controller {
+public class addCommentReviewPageTwo extends controller {
+	
+	String productName = "testing";
+	String brandName = "wardah";
+	
+	public static Logger log =LogManager.getLogger(support.class.getName());
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
@@ -57,7 +63,9 @@ public class filterReviewAge extends controller {
 	
 	public String UrlLogin = null;
 	public String UrlPageDetail = null;
-	public String ActiveFilterAge = null;
+	public String UrlProdDetPage3 = null;
+	public String UrlProdDetPagePrev = null;
+	public String UrlProdDetPageNext = null;
 	
 	
 	@BeforeTest
@@ -66,7 +74,7 @@ public class filterReviewAge extends controller {
 		System.out.println("*******************");
 		driver = controller.getDriver(browser);
 		
-	}
+		}
 	
 	@Test(dataProvider="existingCust")
 	public void scenario_satu(String email,String password,String alamat,String telepon) throws Exception {
@@ -76,7 +84,7 @@ public class filterReviewAge extends controller {
 		login logpro = new login(driver);
 		addproductpage productpage = new addproductpage(driver);
 		productlist prodlist = new productlist(driver);
-		productdetail proddet = new productdetail(driver);;
+		productdetail proddet = new productdetail(driver);
 		
 		assertHome asser = new assertHome(driver);
 		categoryPage cat = new categoryPage(driver);
@@ -85,7 +93,7 @@ public class filterReviewAge extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -115,7 +123,7 @@ public class filterReviewAge extends controller {
 		asser.welcomingpopup();
 		
 		//homepage
-		WebElement getmenu= home.getMenuBody(); //xpath megamenu nya
+		WebElement getmenu= home.getMenuHair(); //xpath megamenu nya
 		Actions act = new Actions(driver);
 		act.moveToElement(getmenu).perform();
 		
@@ -137,19 +145,32 @@ public class filterReviewAge extends controller {
 		
 		asser.waitPageDetail();
 		
-		proddet.clickFilterByAge().click();
-		proddet.chooseAge25till29().click();
+		proddet.clickPage3().click();
 		Thread.sleep(2000);
+		UrlProdDetPage3 = driver.getCurrentUrl();
+		Assert.assertEquals(UrlProdDetPage3, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=3" );
 		
-		//need verify again
+		proddet.clickPrevPageProdDet().click();
+		Thread.sleep(2000);
+		UrlProdDetPagePrev = driver.getCurrentUrl();
+		Assert.assertEquals(UrlProdDetPagePrev, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=2" );
 		
-		ActiveFilterAge =  driver.getCurrentUrl();
-		Assert.assertEquals(ActiveFilterAge, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=3&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1");
+		proddet.clickNextPageProdDet().click();
+		Thread.sleep(2000);
+		UrlProdDetPageNext = driver.getCurrentUrl();
+		Assert.assertEquals(UrlProdDetPageNext, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=3" );
 		
-		
+		//click comment
+		proddet.getReviewInPage3().click();
+//		asser.waitPageReviewDesc();
+//	    proddet.findCommentField().sendKeys("comment 1");
+//	    Thread.sleep(2000);
+	       
+//	    proddet.clickPostComment().click();
+	       
 		
 	}
-
+	
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
@@ -168,7 +189,7 @@ public class filterReviewAge extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -191,8 +212,6 @@ public class filterReviewAge extends controller {
 		       }
 		     filepath.close();
 		     return Testdata;
-	
-	}
-	
+		     }
 
 }

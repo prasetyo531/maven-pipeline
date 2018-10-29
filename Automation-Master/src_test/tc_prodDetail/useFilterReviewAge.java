@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -49,7 +49,7 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class filterReviewHairType extends controller {
+public class useFilterReviewAge extends controller {
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
@@ -57,10 +57,8 @@ public class filterReviewHairType extends controller {
 	
 	public String UrlLogin = null;
 	public String UrlPageDetail = null;
-	public String ActiveFilterHair = null;
+	public String ActiveFilterAge = null;
 	
-	public String textDescAfterEdit = "back at two back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at two terakhir";
-	public String textDescGetEdit = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -87,7 +85,7 @@ public class filterReviewHairType extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -140,17 +138,15 @@ public class filterReviewHairType extends controller {
 		asser.waitPageDetail();
 		
 		proddet.clickFilterByAge().click();
-		proddet.chooseWafy().click();
+		proddet.chooseAge25till29().click();
 		Thread.sleep(2000);
-		
-		proddet.clickFilterByAge().click();
-		proddet.chooseThick().click();
-		Thread.sleep(2000);
-		
-		ActiveFilterHair =  driver.getCurrentUrl();
-		Assert.assertEquals(ActiveFilterHair, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=1&hair_type=1&order=newest&page=1");
 		
 		//need verify again
+		
+		ActiveFilterAge =  driver.getCurrentUrl();
+		Assert.assertEquals(ActiveFilterAge, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=3&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1");
+		
+		
 		
 	}
 
@@ -172,7 +168,7 @@ public class filterReviewHairType extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -198,5 +194,5 @@ public class filterReviewHairType extends controller {
 	
 	}
 	
-}
 
+}

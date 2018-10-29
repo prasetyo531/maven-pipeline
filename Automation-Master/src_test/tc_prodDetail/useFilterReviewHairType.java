@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -50,13 +49,7 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-
-public class sortingProductDet extends controller {
-	
-	String productName = "testing";
-	String brandName = "wardah";
-	
-	public static Logger log =LogManager.getLogger(support.class.getName());
+public class useFilterReviewHairType extends controller {
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
@@ -64,10 +57,10 @@ public class sortingProductDet extends controller {
 	
 	public String UrlLogin = null;
 	public String UrlPageDetail = null;
-	public String UrlProdDetPage3 = null;
-	public String UrlProdDetPagePrev = null;
-	public String UrlProdDetPageNext = null;
+	public String ActiveFilterHair = null;
 	
+	public String textDescAfterEdit = "back at two back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at two terakhir";
+	public String textDescGetEdit = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -75,7 +68,7 @@ public class sortingProductDet extends controller {
 		System.out.println("*******************");
 		driver = controller.getDriver(browser);
 		
-		}
+	}
 	
 	@Test(dataProvider="existingCust")
 	public void scenario_satu(String email,String password,String alamat,String telepon) throws Exception {
@@ -85,7 +78,7 @@ public class sortingProductDet extends controller {
 		login logpro = new login(driver);
 		addproductpage productpage = new addproductpage(driver);
 		productlist prodlist = new productlist(driver);
-		productdetail proddet = new productdetail(driver);
+		productdetail proddet = new productdetail(driver);;
 		
 		assertHome asser = new assertHome(driver);
 		categoryPage cat = new categoryPage(driver);
@@ -94,7 +87,7 @@ public class sortingProductDet extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -124,52 +117,43 @@ public class sortingProductDet extends controller {
 		asser.welcomingpopup();
 		
 		//homepage
-		WebElement getmenu= home.getMenuSkincare(); //xpath megamenu nya
+		WebElement getmenu= home.getMenuBody(); //xpath megamenu nya
 		Actions act = new Actions(driver);
 		act.moveToElement(getmenu).perform();
 		
-		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Wash-Off")));
+		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Vitamin & Serum")));
 
-		WebElement clickElement= driver.findElement(By.linkText("Wash-Off"));//xpath sub megamenu nya
+		WebElement clickElement= driver.findElement(By.linkText("Vitamin & Serum"));//xpath sub megamenu nya
 		act.moveToElement(clickElement).click().perform();
 		
 		asser.getDataProductList();
 		
-		WebElement getaddreview= prodlist.pointProdHimalayan();
+		WebElement getaddreview= prodlist.pointAddReviewProdList();
 		Actions act2 = new Actions(driver);
 		act2.moveToElement(getaddreview).perform();
 		(new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("ADD REVIEW")));
 		WebElement clickElemen2= driver.findElement(By.linkText("ADD REVIEW"));//xpath sub megamenu nya
 		act.moveToElement(clickElemen2).click().perform();
 		
-		proddet.clickFilterBySkin().click();
-		proddet.chooseSkinOily().click();
+		prodlist.foundAddReviewProdList().click();
+		
+		asser.waitPageDetail();
+		
+		proddet.clickFilterByAge().click();
+		proddet.chooseWafy().click();
 		Thread.sleep(2000);
 		
 		proddet.clickFilterByAge().click();
-		proddet.chooseAge30till34().click();
+		proddet.chooseThick().click();
 		Thread.sleep(2000);
 		
-		proddet.clickSortProDett().click();
-		proddet.chooseMostLike().click();
-		Thread.sleep(2000);
+		ActiveFilterHair =  driver.getCurrentUrl();
+		Assert.assertEquals(ActiveFilterHair, "http://reviews.femaledaily.net/treatment-color/vitamin/loreal-paris/smooth-intense-anti-frizz-serum?tab=reviews&cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=1&hair_type=1&order=newest&page=1");
 		
-		proddet.clickComment().click();
-	    asser.waitPageReviewDesc();
-	    
-	    Thread.sleep(2000);
-	    
-	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559']"));
-	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559 modal-review']"));
-	    main = driver.findElement(By.cssSelector("div[class='jsx-3475087559 modal-feed-scroll']"));
-	    
-	    JavascriptExecutor js = ((JavascriptExecutor) driver);
-	    js.executeScript("window.scrollTo(1306,1158, document.body.scrollHeight);");
-	    
-	    proddet.clickLoadMoreCommentButton().click();
+		//need verify again
 		
 	}
-	
+
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
@@ -188,7 +172,7 @@ public class sortingProductDet extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -211,6 +195,8 @@ public class sortingProductDet extends controller {
 		       }
 		     filepath.close();
 		     return Testdata;
-		     }
-
+	
+	}
+	
 }
+
