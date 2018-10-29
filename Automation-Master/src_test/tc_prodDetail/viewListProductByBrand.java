@@ -1,4 +1,6 @@
-package testcase;
+package tc_prodDetail;
+
+import static org.testng.Assert.assertTrue;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -47,7 +49,7 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class viewListProductByBrandReviewDesc {
+public class viewListProductByBrand extends controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -86,7 +88,7 @@ public class viewListProductByBrandReviewDesc {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -127,12 +129,11 @@ public class viewListProductByBrandReviewDesc {
 		
 		asser.waitPageDetail();
 		
-		proddet.findReviewDesc().click();
+		proddet.findBrandName().click();
 		
-		proddet.clickBrandInRevDesc().click();
 		
 	}
-	
+
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
@@ -151,7 +152,7 @@ public class viewListProductByBrandReviewDesc {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -175,5 +176,4 @@ public class viewListProductByBrandReviewDesc {
 		     filepath.close();
 		     return Testdata;
 		     }
-
 }

@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -49,19 +49,15 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class viewListProductByBrand extends controller {
+public class addReviewGuest extends controller {
 	
-	String productName = "testing";
-	String brandName = "wardah";
-	
-	public static Logger log =LogManager.getLogger(support.class.getName());
+public static Logger log =LogManager.getLogger(support.class.getName());
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
 	public static Properties prop=null;
 	
 	public String UrlLogin = null;
-	public String UrlPageDetail = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -79,7 +75,7 @@ public class viewListProductByBrand extends controller {
 		login logpro = new login(driver);
 		addproductpage productpage = new addproductpage(driver);
 		productlist prodlist = new productlist(driver);
-		productdetail proddet = new productdetail(driver);;
+		productdetail proddet = new productdetail(driver);
 		
 		assertHome asser = new assertHome(driver);
 		categoryPage cat = new categoryPage(driver);
@@ -88,7 +84,7 @@ public class viewListProductByBrand extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -129,11 +125,14 @@ public class viewListProductByBrand extends controller {
 		
 		asser.waitPageDetail();
 		
-		proddet.findBrandName().click();
+		proddet.clickAddReview().click();
 		
+		UrlLogin = driver.getCurrentUrl();
 		
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );	
+	
 	}
-
+	
 	@AfterMethod
 	public void tearDown() {
 		if(driver!=null) {
@@ -152,7 +151,7 @@ public class viewListProductByBrand extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -176,4 +175,9 @@ public class viewListProductByBrand extends controller {
 		     filepath.close();
 		     return Testdata;
 		     }
+	
 }
+
+	
+	
+	

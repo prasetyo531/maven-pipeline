@@ -1,4 +1,4 @@
-package testcase;
+package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
@@ -49,21 +49,19 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class viewProfileDetailProductDetail extends controller {
+public class editReview extends controller{
 	
-	String productName = "testing";
-	String brandName = "wardah";
-	
-	public static Logger log =LogManager.getLogger(support.class.getName());
+public static Logger log =LogManager.getLogger(support.class.getName());
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
 	public static Properties prop=null;
 	
-	public String UrlReviewerProdDetail = null;
-	public String UrlReviewerReviewDesc = null;
+	public String UrlLogin = null;
+	public String UrlPageDetail = null;
 	
-	public String nameReviewer = null;
+	public String textDescAfterEdit = "back at two back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at two terakhir";
+	public String textDescGetEdit = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -90,7 +88,7 @@ public class viewProfileDetailProductDetail extends controller {
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -109,13 +107,24 @@ public class viewProfileDetailProductDetail extends controller {
 		//on browser
 		home.letmejoinletter().click();
 		
+		home.clickLogin().click();
+		UrlLogin = driver.getCurrentUrl();
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
+		
+		logpro.fillusername().sendKeys("putwid");
+		logpro.fillpassword().sendKeys("tester123");
+		logpro.clickbuttonlogin().click();
+		
+		asser.welcomingpopup();
+		
+		//homepage
 		WebElement getmenu= home.getMenuBody(); //xpath megamenu nya
 		Actions act = new Actions(driver);
 		act.moveToElement(getmenu).perform();
 		
-		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Hand Cream")));
+		(new WebDriverWait(driver, 3)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Creams")));
 
-		WebElement clickElement= driver.findElement(By.linkText("Hand Cream"));//xpath sub megamenu nya
+		WebElement clickElement= driver.findElement(By.linkText("Creams"));//xpath sub megamenu nya
 		act.moveToElement(clickElement).click().perform();
 		
 		asser.getDataProductList();
@@ -131,19 +140,44 @@ public class viewProfileDetailProductDetail extends controller {
 		
 		asser.waitPageDetail();
 		
-		//get name reviewer
-		nameReviewer= proddet.clickNameReviewer().getText();
-		System.out.println(nameReviewer);
-		proddet.clickReviewerProdDet().click();
-		asser.waitProfilePage();
-		UrlReviewerProdDetail = driver.getCurrentUrl();
-		System.out.println(UrlReviewerProdDetail);
-		Assert.assertTrue(UrlReviewerProdDetail.contains("reviews.femaledaily.net/user/"+nameReviewer));
+		String ButtonBeforeReview = proddet.clickAddReview().getText();
+		Assert.assertEquals(ButtonBeforeReview, "ADD REVIEW" );
+		proddet.clickAddReview().click();
 		
+		asser.waitReviewForm();
 		
+		proddet.fillFieldReview().sendKeys("back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one back at one");
+		proddet.chooseRating().click();
+		proddet.chooseProductPrice().click();
+		proddet.choosePackageQuality().click();
+		proddet.chooseRepurchaseThisProduct().click();
+		proddet.clickSubmitReview().click();
+		
+		asser.waitReviewSubmitted();
+		
+		String ButtonAfterReview = proddet.clickAddReview().getText();
+		Assert.assertEquals(ButtonAfterReview, "EDIT REVIEW" );
+		
+		proddet.clickAddReview().click();
+		
+		asser.waitReviewForm();
+		proddet.clickSubmitReview().click();
+		Thread.sleep(1000);
+		
+		asser.waitReviewSubmitted();
+		String ButtonAfterReview2 = proddet.clickAddReview().getText();
+		Assert.assertEquals(ButtonAfterReview2, "EDIT REVIEW");
+		
+		proddet.clickAddReview().click();
+		asser.waitReviewForm();	
+		proddet.fillFieldReview().sendKeys(textDescAfterEdit);
+		proddet.clickSubmitReview().click();
+		asser.waitReviewForm();
+		
+		textDescGetEdit = proddet.getDetailDesc().getText();
+		Assert.assertEquals(textDescGetEdit, textDescAfterEdit);
 		
 	}
-
 	
 	@AfterMethod
 	public void tearDown() {
@@ -163,7 +197,7 @@ public class viewProfileDetailProductDetail extends controller {
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-		FileInputStream filepath = new FileInputStream("//Users//mac//Documents//Automation//mavenjob//Automation-Master//Workbook1.xls");
+		FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
@@ -186,7 +220,7 @@ public class viewProfileDetailProductDetail extends controller {
 		       }
 		     filepath.close();
 		     return Testdata;
-		     }
+	
+	}
 	
 }
-

@@ -1,6 +1,4 @@
-package tc_categoryList;
-
-import static org.testng.Assert.assertTrue;
+package tc_prodDetail;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -49,15 +47,19 @@ import pageObjects.productlist;
 import resources.controller;
 import resources.support;
 
-public class addReviewGuest extends controller {
+public class viewListProductByBrandReviewDesc extends controller {
 	
-public static Logger log =LogManager.getLogger(support.class.getName());
+	String productName = "testing";
+	String brandName = "wardah";
+	
+	public static Logger log =LogManager.getLogger(support.class.getName());
 	
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
 	public static Properties prop=null;
 	
 	public String UrlLogin = null;
+	public String UrlPageDetail = null;
 	
 	@BeforeTest
 	@Parameters({ "browser" })
@@ -75,7 +77,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		login logpro = new login(driver);
 		addproductpage productpage = new addproductpage(driver);
 		productlist prodlist = new productlist(driver);
-		productdetail proddet = new productdetail(driver);
+		productdetail proddet = new productdetail(driver);;
 		
 		assertHome asser = new assertHome(driver);
 		categoryPage cat = new categoryPage(driver);
@@ -84,7 +86,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		checkoutPage checkout = new checkoutPage(driver);
 		
 		prop= new Properties();
-		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
+		FileInputStream fis=new FileInputStream(workingDir+"//Users//mac//Documents//Automation//mavenjob//Automation-Master//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
 		
@@ -125,12 +127,10 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		
 		asser.waitPageDetail();
 		
-		proddet.clickAddReview().click();
+		proddet.findReviewDesc().click();
 		
-		UrlLogin = driver.getCurrentUrl();
+		proddet.clickBrandInRevDesc().click();
 		
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );	
-	
 	}
 	
 	@AfterMethod
@@ -175,9 +175,5 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		     filepath.close();
 		     return Testdata;
 		     }
-	
-}
 
-	
-	
-	
+}
