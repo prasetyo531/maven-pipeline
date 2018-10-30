@@ -4,7 +4,13 @@
   <test name="Test1">
   <parameter name="browser" value="chrome"/>
         <classes>
-      <class name="tc_addProduct.addProduct"/>
+      <class name="testcase.swtestacademy"/>
      </classes>
   </test>
+    <test name="Test2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcase.swtestacademy"/>
+        </classes>
+    </test>
 </suite> <!-- Suite -->

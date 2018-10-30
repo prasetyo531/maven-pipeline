@@ -56,8 +56,8 @@ public class addCommentReviewPageTwo extends controller {
 	String brandName = "wardah";
 	
 	public static Logger log =LogManager.getLogger(support.class.getName());
-	
-	public static RemoteWebDriver driver= null;
+
+	protected static RemoteWebDriver driver = null;
 	public static WebElement main= null;
 	public static Properties prop=null;
 	
