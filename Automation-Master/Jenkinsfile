@@ -26,11 +26,4 @@ pipeline {
         }
     }
 
-        always {
-            step([$class: 'Mailer',
-                notifyEveryUnstableBuild: true,
-                recipients: "qatestingsatu01@gmail.com",
-                sendToIndividuals: true])
-        }
-    
 }
