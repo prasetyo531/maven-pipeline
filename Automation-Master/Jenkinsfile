@@ -25,12 +25,6 @@ pipeline {
          
         }
     }
-       post {
-        failure {
-            script {
-                currentBuild.result = 'FAILURE'
-            }
-        }
 
         always {
             step([$class: 'Mailer',
@@ -38,5 +32,5 @@ pipeline {
                 recipients: "qatestingsatu01@gmail.com",
                 sendToIndividuals: true])
         }
-    }
+    
 }
