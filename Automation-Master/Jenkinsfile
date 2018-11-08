@@ -2,9 +2,9 @@
 
 pipeline {
     agent any
-	tools { 
-        maven 'MAVEN_HOME' 
-        jdk 'JAVA_HOME' 
+    tools {
+        maven 'MAVEN_HOME'
+        jdk 'JAVA_HOME'
     }
     stages {
         stage ('Initialize') {
@@ -12,18 +12,31 @@ pipeline {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                '''
             }
         }
 
-       stage ('Build') {
+        stage ('Build') {
             steps {
-		 dir('/Users/mac/.jenkins/workspace/pipeline-script/Automation-Master') {
-            sh 'mvn test'
-        }
-		}
-         
+                dir('/Users/mac/.jenkins/workspace/pipeline-script/Automation-Master') {
+                    sh 'mvn test'
+                }
+            }
+
         }
     }
+    post {
+        failure {
+            script {
+                currentBuild.result = 'FAILURE'
+            }
+        }
 
+        always {
+            step([$class: 'Mailer',
+                  notifyEveryUnstableBuild: true,
+                  recipients: "qatestingsatu01@gmail.com",
+                  sendToIndividuals: true])
+        }
+    }
 }
