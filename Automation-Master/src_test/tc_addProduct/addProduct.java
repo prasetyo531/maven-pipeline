@@ -113,7 +113,7 @@ public class addProduct extends controller {
 		FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
 		prop.load(fis);
 		String testenv=prop.getProperty("testlocation");
-		
+
 		if(testenv.equalsIgnoreCase("prod")){
         	driver.navigate().to("http://femaledaily.com/");  //https://dev.uangteman.com/a/NHeHv
              driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

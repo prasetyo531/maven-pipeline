@@ -6,7 +6,7 @@
     <classes>
       <class name="testcase.swtestacademy">
         <methods>
-          <include name="scenario_satu" invocation-numbers="0"/>
+          <include name="scenario_satu"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="setUp"/>
@@ -19,7 +19,7 @@
     <classes>
       <class name="testcase.swtestacademy">
         <methods>
-          <include name="scenario_satu" invocation-numbers="0"/>
+          <include name="scenario_satu"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="setUp"/>
