@@ -39,9 +39,9 @@ public class homepage {
 		
 	}
 	
-	public void closeTooltip(){
+	public WebElement closeTooltip(){
 
-		tooltip.click();
+		return driver.findElement(tooltip);
 	}
 	
 	public WebElement Hamburger(){

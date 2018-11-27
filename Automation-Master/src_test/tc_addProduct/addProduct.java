@@ -16,16 +16,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -40,15 +37,7 @@ import assertObject.assertHome;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
-import pageObjects.cartPage;
-import pageObjects.categoryPage;
-import pageObjects.checkoutPage;
-import pageObjects.ProductPage;
-import pageObjects.addproductpage;
-import pageObjects.homepage;
-import pageObjects.login;
-import pageObjects.productdetail;
-import pageObjects.productlist;
+import pageObjects.*;
 import resources.controller;
 import resources.support;
 import resources.ConnectDB;
@@ -127,7 +116,7 @@ public class addProduct extends controller {
 		String strPageTitle = driver.getTitle();
 		System.out.println(strPageTitle);
 		
-		home.clickLogin();
+		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
 		

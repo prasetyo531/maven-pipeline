@@ -1,8 +1,10 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 public class homepage_dua {
 
@@ -37,61 +39,11 @@ public class homepage_dua {
     By menuSkincare=By.cssSelector("#__next > div > div > div.jsx-746878661.gtmenu > div.jsx-746878661.gtmenu-menu-main > div.jsx-746878661.gtmenu-menu-left > div > div > div:nth-child(3) > a");
     By findaddreview=By.cssSelector("#__next > div > div > div.jsx-1787593642.home-content > div.jsx-1787593642.home-column.margin-bottom-30 > div.jsx-1787593642.home-one-quarter > div.jsx-1787593642.home-reviews-content > button");
 
-    public homepage(RemoteWebDriver driver) {
+    public homepage_dua(RemoteWebDriver driver) {
         // TODO Auto-generated constructor stub
 
         this.driver=driver;
 
-    }
-
-    public void closeTooltip(){
-
-        tooltip.click();
-    }
-
-    public WebElement Hamburger(){
-
-        return driver.findElement(hamburger);
-    }
-
-    public WebElement letmejoinletter(){
-
-        return driver.findElement(joinletter);
-    }
-
-    public WebElement letmejoinletter2(){
-
-        return driver.findElement(joinletterReviewPage);
-    }
-
-    public WebElement clickMenuReview(){
-
-        return driver.findElement(reviews);
-    }
-
-    public WebElement getMenuBody(){
-
-        return driver.findElement(menuBody);
-    }
-
-    public WebElement getMenuHair(){
-
-        return driver.findElement(menuHair);
-    }
-
-    public WebElement getMenuSkincare(){
-
-        return driver.findElement(menuSkincare);
-    }
-
-    public WebElement getAddProduct(){
-
-        return driver.findElement(pointaddproduct);
-    }
-
-    public WebElement clickAddProduct(){
-
-        return driver.findElement(clickaddproduct);
     }
 
     //login
