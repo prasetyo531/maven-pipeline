@@ -108,7 +108,7 @@ public class commentLastAddedProduct extends controller {
 		//on browser
 		home.letmejoinletter().click();
 		
-		home.clickLogin().click();
+		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
 		

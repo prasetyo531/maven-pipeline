@@ -127,7 +127,7 @@ public class addProductEditBrand extends controller {
 		String strPageTitle = driver.getTitle();
 		System.out.println(strPageTitle);
 		
-		home.clickLogin().click();
+		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
 		

@@ -112,7 +112,7 @@ public class createAccountUsingRegisteredEmail extends controller {
 		System.out.println(strPageTitle);
 		
 		//login page
-		home.clickLogin().click();
+		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/");
 		

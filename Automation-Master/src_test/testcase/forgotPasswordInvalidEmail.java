@@ -114,7 +114,7 @@ public class forgotPasswordInvalidEmail extends controller {
 		home.letmejoinletter().click();
 		
 		//login page
-		home.clickLogin().click();
+		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/");
 		

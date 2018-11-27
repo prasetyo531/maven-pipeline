@@ -3,13 +3,20 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
 
 public class homepage {
 	
 	public RemoteWebDriver driver=null;
-	
+
+	@FindBy(className="i[class='jsx-696978944 icon-ic_close close'\"")
+	WebElement tooltip;
+
+	@FindBy(xpath = "//*[@id='__next']/div/div/div[1]/div/div[1]/div[2]/div/a")
+	WebElement clicklogin;
+
 	//tooltip
-	By tooltip=By.cssSelector("i[class='jsx-696978944 icon-ic_close close'");
+//	By tooltip=By.cssSelector("i[class='jsx-696978944 icon-ic_close close'");
 	
 	// hamburger element
 	By hamburger=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[1]/span");
@@ -24,7 +31,7 @@ public class homepage {
 	By pointaddproduct=By.cssSelector("div[class='gbheader-add-area']");
 	By pointloginlogout=By.cssSelector("#__next > div > div > div.jsx-1986071017.gbheader > div.jsx-1986071017.gbheader-right > div.gbheader-userprofile");
 	By clickaddproduct=By.linkText("Add Product");
-	By clicklogin=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[2]/div/a");
+//	By clicklogin=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[2]/div/a");
 	By searchelement=By.xpath("//*[@id='__next']/div/div/div[2]/div[2]/form/input");
 	By menuBody=By.cssSelector("#__next > div > div > div.jsx-746878661.gtmenu > div.jsx-746878661.gtmenu-menu-main > div.jsx-746878661.gtmenu-menu-left > div > div > div:nth-child(2) > a");
 	By menuHair=By.cssSelector("#__next > div > div > div.jsx-746878661.gtmenu > div.jsx-746878661.gtmenu-menu-main > div.jsx-746878661.gtmenu-menu-left > div > div > div:nth-child(1) > a");
@@ -38,9 +45,9 @@ public class homepage {
 		
 	}
 	
-	public WebElement closeTooltip(){
-		
-		return driver.findElement(tooltip);
+	public void closeTooltip(){
+
+		tooltip.click();
 	}
 	
 	public WebElement Hamburger(){
@@ -89,9 +96,9 @@ public class homepage {
 	}
 
 	//login
-	public WebElement clickLogin(){
+	public void clickLogin(){
 		
-		return driver.findElement(clicklogin);
+		clicklogin.click();
 	}
 	
 	//search
