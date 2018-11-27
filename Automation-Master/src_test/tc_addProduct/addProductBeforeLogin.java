@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
@@ -87,7 +88,9 @@ public static Logger log =LogManager.getLogger(support.class.getName());
         		driver.navigate().to("http://femaledaily.net/");  //https://dev.uangteman.com/a/NHeHv
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         	}
-		
+
+		driver.manage().window().setSize(new Dimension(1650, 1200));
+
 		//click hamburger
 		home.Hamburger().click();;
 		

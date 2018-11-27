@@ -112,13 +112,13 @@ public class createAccountFacebook extends controller {
         		driver.navigate().to("http://femaledaily.net/");  //https://dev.uangteman.net/a/NHeHv
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         	}
-		
-		driver.manage().window().maximize();
+
+		driver.manage().window().setSize(new Dimension(1650, 1200));
 		String strPageTitle = driver.getTitle();
 		System.out.println(strPageTitle);
 		
 		//login page
-		home.clickLogin();
+		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/");
 		
