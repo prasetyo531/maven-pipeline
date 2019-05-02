@@ -6,7 +6,6 @@ pageObjects/productlist.class
 pageObjects/login.class
 resources/ExtentReporterNG.class
 pageObjects/reviewsPage.class
-base/testBase.class
 pageObjects/profileDetail.class
 assertObject/assertCompProfile.class
 pageObjects/cartPage.class
