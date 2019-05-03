@@ -102,5 +102,9 @@
     <orderEntry type="library" name="Maven: org.apache.poi:poi:3.17" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
     <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.54" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javafaker:javafaker:0.15" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:android:1.20" level="project" />
+    <orderEntry type="library" name="Maven: com.github.mifmif:generex:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: dk.brics.automaton:automaton:1.11-8" level="project" />
   </component>
 </module>

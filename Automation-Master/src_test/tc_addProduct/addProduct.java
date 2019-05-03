@@ -14,6 +14,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import com.github.javafaker.Faker;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
@@ -98,7 +99,10 @@ public class addProduct extends controller {
         //PageFactory is used to find elements with @FindBy specified
         PageFactory.initElements(driver, productpage);
         PageFactory.initElements(driver, home);
-		
+
+        //Faker
+        Faker faker = new Faker();
+
 		assertHome asser = new assertHome(driver);
 		assertAddProduct asserAddProd = new assertAddProduct(driver);
 		
@@ -243,7 +247,7 @@ public class addProduct extends controller {
        WebElement focusProductShade= productpage.insertProductShade(); //xpath megamenu nya  
        Actions onfocusProductShade = new Actions(driver);
        onfocusProductShade.moveToElement(focusProductShade).click();
-       onfocusProductShade.sendKeys("female");
+       onfocusProductShade.sendKeys(faker.name().firstName());
        onfocusProductShade.build().perform();
        
        productpage.nextStep2().click();
