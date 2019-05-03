@@ -1,0 +1,3 @@
+# Created on 2019-05-03T15:40:41.607
+2019-05-03 15:40:41.584 java[9817:1074724] pid(9817)/euid(501) is calling TIS/TSM in non-main thread environment, ERROR : This is NOT allowed. Please call TIS/TSM in main thread!!!
+

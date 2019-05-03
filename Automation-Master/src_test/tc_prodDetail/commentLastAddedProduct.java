@@ -127,7 +127,7 @@ public class commentLastAddedProduct extends controller {
 		System.out.println(UrlLogin);
 		
 		//step 1
-		productpage.clickUploadPhoto().click();
+		productpage.clickUploadPhoto();
 		
 		File file1 = new File("/Users/mac/Documents/multimedia/background/product-test.jpg");
         StringSelection stringSelection1= new StringSelection(file1.getAbsolutePath());

@@ -94,6 +94,10 @@ public class addProduct extends controller {
 		ProductPage prod = new ProductPage(driver);
 		cartPage cpage = new cartPage(driver);
 		checkoutPage checkout = new checkoutPage(driver);
+
+        //PageFactory is used to find elements with @FindBy specified
+        PageFactory.initElements(driver, productpage);
+        PageFactory.initElements(driver, home);
 		
 		assertHome asser = new assertHome(driver);
 		assertAddProduct asserAddProd = new assertAddProduct(driver);
@@ -151,7 +155,7 @@ public class addProduct extends controller {
 		productpage.clickCloseModal().click();
 		
 		//step 1
-		productpage.clickUploadPhoto().click();
+		productpage.clickUploadPhoto();
 		
 		File file1 = new File("/Users/mac/Documents/multimedia/background/product-test.jpg");
         StringSelection stringSelection1= new StringSelection(file1.getAbsolutePath());
@@ -160,7 +164,7 @@ public class addProduct extends controller {
         Robot robot1 = new Robot();
         
         // Cmd + Tab is needed since it launches a Java app and the browser looses focus
-       
+
        robot1.keyPress(KeyEvent.VK_META);
        robot1.keyPress(KeyEvent.VK_TAB);
        robot1.keyRelease(KeyEvent.VK_META);

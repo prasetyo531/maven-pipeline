@@ -3,6 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+
+import java.io.IOException;
 
 public class addproductpage {
 	
@@ -11,6 +14,8 @@ public class addproductpage {
 	By yessure=By.cssSelector("input[value='Yes, I’m sure']");
 	
 	//step1
+	public @FindBy(id ="addproduct-button-upload") WebElement uploadPhoto;
+
 	By uploadphoto=By.id("addproduct-button-upload");
 	By inserturlphoto=By.id("addproduct-image-url");
 	By croparea=By.cssSelector("#modal-crop-showed > div > div.ReactCrop.ReactCrop--fixed-aspect > img");
@@ -66,7 +71,12 @@ public class addproductpage {
 		this.driver=driver;
 		
 	}
-	
+
+	public addproductpage()throws IOException {
+
+		super();
+	}
+
 	public WebElement clickCloseModal(){
 		
 		return driver.findElement(yessure);
@@ -74,9 +84,17 @@ public class addproductpage {
 	
 	//=================================STEP 1======================================//
 	
-	public WebElement clickUploadPhoto(){
-		
-		return driver.findElement(uploadphoto);
+//	public WebElement clickUploadPhoto(){
+//
+//		return driver.findElement(uploadPhoto);
+//	}
+
+	public addproductpage clickUploadPhoto()throws Exception{
+
+		uploadPhoto.click();
+
+		return new addproductpage();
+
 	}
 	
 	public WebElement insertUrl(){
