@@ -94,11 +94,18 @@ public class addProduct extends controller {
 		categoryPage cat = new categoryPage(driver);
 		ProductPage prod = new ProductPage(driver);
 		cartPage cpage = new cartPage(driver);
-		checkoutPage checkout = new checkoutPage(driver);
 
         //PageFactory is used to find elements with @FindBy specified
         PageFactory.initElements(driver, productpage);
+        PageFactory.initElements(driver, supp);
         PageFactory.initElements(driver, home);
+        PageFactory.initElements(driver, logpro);
+        PageFactory.initElements(driver, productpage);
+        PageFactory.initElements(driver, prodlist);
+        PageFactory.initElements(driver, proddet);
+        PageFactory.initElements(driver, cat);
+        PageFactory.initElements(driver, prod);
+        PageFactory.initElements(driver, cpage);
 
         //Faker
         Faker faker = new Faker();
