@@ -219,18 +219,14 @@ public class addProduct extends controller {
 		asserAddProd.buttonnext1enable();
 		
 		JavascriptExecutor je = (JavascriptExecutor) driver;
-	    WebElement elementnext = productpage.nextStep1();
+	    WebElement elementnext = (WebElement) productpage.nextStep1();
 	    je.executeScript("arguments[0].scrollIntoView(true);",elementnext);
        
-       productpage.nextStep1().click();
+       productpage.nextStep1();
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        
        //step 2
-       WebElement focusbrand= productpage.selectBrand(); //xpath megamenu nya  
-       Actions onfocusbrand = new Actions(driver);
-       onfocusbrand.moveToElement(focusbrand).click();
-       onfocusbrand.sendKeys("warda", Keys.ENTER);
-       onfocusbrand.build().perform();
+       productpage.selectBrand();
        
        WebElement focusprodcat= productpage.selectProductCat(); //xpath megamenu nya  
        Actions onfocusprodcat = new Actions(driver);

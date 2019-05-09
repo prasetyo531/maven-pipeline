@@ -142,7 +142,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	    onfocusInputUrl.sendKeys("https://i.kinja-img.com/kampret/image/upload/s--nncnCKWW--/c_scale,f_auto,fl_progressive,q_80,w_800/17hyh5lm9yhjvjpg.jpg");
 	    onfocusInputUrl.build().perform();
 	    
-	    productpage.clickShowLinkImage().click();
+	    productpage.clickShowLinkImage();
 	    
 	    (new WebDriverWait(driver, 15)).until(ExpectedConditions.alertIsPresent()); //find alert
 	    Alert alert = driver.switchTo().alert();
@@ -153,25 +153,22 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	    onfocusInputUrl.sendKeys("https://i.kinja-img.com/gawker-media/image/upload/s--nncnCKWW--/c_scale,f_auto,fl_progressive,q_80,w_800/17hyh5lm9yhjvjpg.jpg");
 	    onfocusInputUrl.build().perform();
 		
-	    productpage.clickShowLinkImage().click();
+	    productpage.clickShowLinkImage();
 		
 		asserAddProd.buttonnext1enable();
 		
 		JavascriptExecutor je = (JavascriptExecutor) driver;
-	    WebElement elementnext = productpage.nextStep1();
+	    WebElement elementnext = (WebElement) productpage.nextStep1();
 	    je.executeScript("arguments[0].scrollIntoView(true);",elementnext);
        
 //       JavascriptExecutor js = (JavascriptExecutor) driver;
 //       js.executeScript("window.scrollBy(0,1000)");
        
-       productpage.nextStep1().click();
+       productpage.nextStep1();
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
        //step 2
-       WebElement focusbrand= productpage.selectBrand(); //xpath megamenu nya  
-       Actions onfocusbrand = new Actions(driver);
-       onfocusbrand.moveToElement(focusbrand).click();
-       onfocusbrand.sendKeys("warda", Keys.ENTER);
-       onfocusbrand.build().perform();
+       productpage.selectBrand();
        
        WebElement focusprodcat= productpage.selectProductCat(); //xpath megamenu nya  
        Actions onfocusprodcat = new Actions(driver);

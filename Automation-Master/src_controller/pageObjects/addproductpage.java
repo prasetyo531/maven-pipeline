@@ -1,7 +1,9 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,16 +17,26 @@ public class addproductpage {
 	
 	//step1
 	public @FindBy(id ="addproduct-button-upload") WebElement uploadPhoto;
+	public @FindBy(id ="addproduct-button-show-image") WebElement showLink;
+	public @FindBy(id ="") WebElement nextstep1;
+
+	//step2
+	public @FindBy(id ="react-select-2--value") WebElement brandname;
+//	public @FindBy(id ="react-select-3--value") WebElement productcat;
+//	public @FindBy(id ="react-select-4--value") WebElement productsubcat;
+//	public @FindBy(id ="react-select-5--value") WebElement productsubcat2;
+//	public @FindBy(id ="addproduct-input-product-name") WebElement productname;
+//	public @FindBy(id ="addproduct-input-product-shade") WebElement productshade;
+//	public @FindBy(id ="addproduct-button-submit") WebElement nextstep2;
 
 	By uploadphoto=By.id("addproduct-button-upload");
 	By inserturlphoto=By.id("addproduct-image-url");
 	By croparea=By.cssSelector("#modal-crop-showed > div > div.ReactCrop.ReactCrop--fixed-aspect > img");
 	By btncrop=By.xpath("//*[@id='modal-crop-showed']/div/div[2]/button[1]");
-	By show=By.id("addproduct-button-show-image");
-	By nextstep1=By.id("addproduct-button-next");
+//	By nextstep1=By.id("addproduct-button-next");
 	
 	//step2
-	By brandname=By.id("react-select-2--value");
+//	By brandname=By.id("react-select-2--value");
 	By editbrandname=By.xpath("//*[@id='react-select-7--value']/div[1]");
 	By productcat=By.id("react-select-3--value");
 	By productsubcat=By.id("react-select-4--value");
@@ -113,21 +125,31 @@ public class addproductpage {
 		return driver.findElement(btncrop);
 	}
 	
-	public WebElement clickShowLinkImage(){
-		
-		return driver.findElement(show);
+	public addproductpage clickShowLinkImage() throws Exception{
+
+		showLink.click();
+
+		return new addproductpage();
 	}
 	
-	public WebElement nextStep1(){
-		
-		return driver.findElement(nextstep1);
+	public addproductpage nextStep1() throws Exception {
+
+		nextstep1.click();
+
+		return new addproductpage();
 	}
 	
 	//=================================STEP 2======================================//
-	
-	public WebElement selectBrand(){
-		
-		return driver.findElement(brandname);
+
+	public addproductpage selectBrand() throws Exception {
+
+		WebElement focusbrand= brandname; //xpath megamenu nya
+		Actions onfocusbrand = new Actions(driver);
+		onfocusbrand.moveToElement(focusbrand).click();
+		onfocusbrand.sendKeys("warda", Keys.ENTER);
+		onfocusbrand.build().perform();
+
+		return new addproductpage();
 	}
 	
 	public WebElement editBrand(){

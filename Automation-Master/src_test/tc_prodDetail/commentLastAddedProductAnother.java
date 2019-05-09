@@ -133,17 +133,13 @@ public class commentLastAddedProductAnother extends controller {
 	    onfocusInputUrl.sendKeys("https://blog.adioma.com/wp-content/uploads/2014/10/How-Steve-Jobs-Started-apple-founder-infographic-700x466.jpg");
 	    onfocusInputUrl.build().perform();
 	    
-	    productpage.clickShowLinkImage().click();
+	    productpage.clickShowLinkImage();
 	    
-		productpage.nextStep1().click();
+		productpage.nextStep1();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        
        //step 2
-       WebElement focusbrand= productpage.selectBrand(); //xpath megamenu nya  
-       Actions onfocusbrand = new Actions(driver);
-       onfocusbrand.moveToElement(focusbrand).click();
-       onfocusbrand.sendKeys("warda", Keys.ENTER);
-       onfocusbrand.build().perform();
+       productpage.selectBrand();
        
        WebElement focusprodcat= productpage.selectProductCat(); //xpath megamenu nya  
        Actions onfocusprodcat = new Actions(driver);
