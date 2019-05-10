@@ -228,32 +228,16 @@ public class addProduct extends controller {
        //step 2
        productpage.selectBrand();
        
-       WebElement focusprodcat= productpage.selectProductCat(); //xpath megamenu nya  
-       Actions onfocusprodcat = new Actions(driver);
-       onfocusprodcat.moveToElement(focusprodcat).click();
-       onfocusprodcat.sendKeys("frag", Keys.ENTER);
-       onfocusprodcat.build().perform();
+       productpage.selectProductCat();
 
-       WebElement focusProductSubCat= productpage.insertProductSubCat(); //xpath megamenu nya  
-       Actions onfocusProductSubCat = new Actions(driver);
-       onfocusProductSubCat.moveToElement(focusProductSubCat).click();
-       onfocusProductSubCat.sendKeys("edp", Keys.ENTER);
-       onfocusProductSubCat.build().perform();
+       productpage.insertProductSubCat();
        
-       WebElement focusProductName= productpage.insertProductName(); //xpath megamenu nya  
-       Actions onfocusProductName = new Actions(driver);
-       onfocusProductName.moveToElement(focusProductName).click();
-       onfocusProductName.sendKeys(createRandomString(8));
-       onfocusProductName.build().perform();
+       productpage.insertProductName();
+
+       productpage.insertProductShade():
        
-       
-       WebElement focusProductShade= productpage.insertProductShade(); //xpath megamenu nya  
-       Actions onfocusProductShade = new Actions(driver);
-       onfocusProductShade.moveToElement(focusProductShade).click();
-       onfocusProductShade.sendKeys(faker.name().firstName());
-       onfocusProductShade.build().perform();
-       
-       productpage.nextStep2().click();
+       productpage.nextStep2();
+
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        
        //step 3

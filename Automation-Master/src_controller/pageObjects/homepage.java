@@ -25,7 +25,7 @@ public class homepage {
 	By pointaddproduct=By.cssSelector("div[class='gbheader-add-area']");
 	By pointloginlogout=By.cssSelector("#__next > div > div > div.jsx-1986071017.gbheader > div.jsx-1986071017.gbheader-right > div.gbheader-userprofile");
 	By clickaddproduct=By.linkText("Add Product");
-	By clicklogin=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[2]/div/a");
+	By clicklogin=By.id("button-login");
 	By searchelement=By.xpath("//*[@id='__next']/div/div/div[2]/div[2]/form/input");
 	By menuBody=By.cssSelector("#__next > div > div > div.jsx-746878661.gtmenu > div.jsx-746878661.gtmenu-menu-main > div.jsx-746878661.gtmenu-menu-left > div > div > div:nth-child(2) > a");
 	By menuHair=By.cssSelector("#__next > div > div > div.jsx-746878661.gtmenu > div.jsx-746878661.gtmenu-menu-main > div.jsx-746878661.gtmenu-menu-left > div > div > div:nth-child(1) > a");

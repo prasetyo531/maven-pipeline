@@ -1,5 +1,6 @@
 package pageObjects;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class addproductpage {
 	
 	public RemoteWebDriver driver=null;
+	Faker faker = new Faker();
 	
 	By yessure=By.cssSelector("input[value='Yes, I’m sure']");
 	
@@ -22,28 +24,20 @@ public class addproductpage {
 
 	//step2
 	public @FindBy(id ="react-select-2--value") WebElement brandname;
-//	public @FindBy(id ="react-select-3--value") WebElement productcat;
-//	public @FindBy(id ="react-select-4--value") WebElement productsubcat;
-//	public @FindBy(id ="react-select-5--value") WebElement productsubcat2;
-//	public @FindBy(id ="addproduct-input-product-name") WebElement productname;
-//	public @FindBy(id ="addproduct-input-product-shade") WebElement productshade;
-//	public @FindBy(id ="addproduct-button-submit") WebElement nextstep2;
+	public @FindBy(id ="react-select-3--value") WebElement productcat;
+	public @FindBy(id ="react-select-4--value") WebElement productsubcat;
+	public @FindBy(id ="react-select-5--value") WebElement productsubcat2;
+	public @FindBy(id ="addproduct-input-product-name") WebElement productname;
+	public @FindBy(id ="addproduct-input-product-shade") WebElement productshade;
+	public @FindBy(id ="addproduct-button-submit") WebElement nextstep2;
 
 	By uploadphoto=By.id("addproduct-button-upload");
 	By inserturlphoto=By.id("addproduct-image-url");
 	By croparea=By.cssSelector("#modal-crop-showed > div > div.ReactCrop.ReactCrop--fixed-aspect > img");
 	By btncrop=By.xpath("//*[@id='modal-crop-showed']/div/div[2]/button[1]");
-//	By nextstep1=By.id("addproduct-button-next");
 	
 	//step2
-//	By brandname=By.id("react-select-2--value");
 	By editbrandname=By.xpath("//*[@id='react-select-7--value']/div[1]");
-	By productcat=By.id("react-select-3--value");
-	By productsubcat=By.id("react-select-4--value");
-	By productsubcat2=By.id("react-select-5--value");
-	By productname=By.id("addproduct-input-product-name");
-	By productshade=By.id("addproduct-input-product-shade");
-	By nextstep2=By.id("addproduct-button-submit");
 	
 	//step3
 	By rating1=By.id("star-1");
@@ -157,29 +151,55 @@ public class addproductpage {
 		return driver.findElement(editbrandname);
 	}
 	
-	public WebElement selectProductCat(){
-		
-		return driver.findElement(productcat);
+	public addproductpage selectProductCat() throws Exception {
+
+		WebElement focusprodcat= productcat(); //xpath megamenu nya
+		Actions onfocusprodcat = new Actions(driver);
+		onfocusprodcat.moveToElement(focusprodcat).click();
+		onfocusprodcat.sendKeys("frag", Keys.ENTER);
+		onfocusprodcat.build().perform();
+
+		return new addproductpage();
 	}
 	
-	public WebElement insertProductSubCat(){
-		
-		return driver.findElement(productsubcat);
+	public addproductpage insertProductSubCat() throws Exception {
+
+		WebElement focusProductSubCat= productsubcat(); //xpath megamenu nya
+		Actions onfocusProductSubCat = new Actions(driver);
+		onfocusProductSubCat.moveToElement(focusProductSubCat).click();
+		onfocusProductSubCat.sendKeys("edp", Keys.ENTER);
+		onfocusProductSubCat.build().perform();
+
+		return new addproductpage();
 	}
 	
-	public WebElement insertProductName(){
-		
-		return driver.findElement(productname);
+	public addproductpage insertProductName() throws Exception {
+
+		WebElement focusProductName= productname(); //xpath megamenu nya
+		Actions onfocusProductName = new Actions(driver);
+		onfocusProductName.moveToElement(focusProductName).click();
+		onfocusProductName.sendKeys("test name" + faker.name(5).firstName());
+		onfocusProductName.build().perform();
+
+		return new addproductpage();
 	}
 	
-	public WebElement insertProductShade(){
-		
-		return driver.findElement(productshade);
+	public addproductpage insertProductShade() throws Exception {
+
+		WebElement focusProductShade= productshade(); //xpath megamenu nya
+		Actions onfocusProductShade = new Actions(driver);
+		onfocusProductShade.moveToElement(focusProductShade).click();
+		onfocusProductShade.sendKeys("test shade" + faker.name(5).firstName());
+		onfocusProductShade.build().perform();
+
+		return new addproductpage();
 	}
 	
-	public WebElement nextStep2(){
-		
-		return driver.findElement(nextstep2);
+	public addproductpage nextStep2() throws Exception {
+
+		nextstep2.click();
+
+		return new addproductpage();
 	}
 	
 	//=================================STEP 3======================================//

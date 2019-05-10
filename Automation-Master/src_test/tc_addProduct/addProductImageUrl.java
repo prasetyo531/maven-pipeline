@@ -99,7 +99,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		String strPageTitle = driver.getTitle();
 		System.out.println(strPageTitle);
 		
-		home.clickLogin();
+		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
 		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
 		

@@ -4,13 +4,13 @@
   <test parallel="tests" name="Test1(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="tc_addProduct.addProduct">
+      <class name="tc_addProduct.addProductImageUrl">
         <methods>
-          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="scenario_satu" invocation-numbers="0"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- tc_addProduct.addProduct -->
+      </class> <!-- tc_addProduct.addProductImageUrl -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
