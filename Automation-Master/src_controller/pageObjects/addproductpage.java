@@ -40,23 +40,24 @@ public class addproductpage {
 	By editbrandname=By.xpath("//*[@id='react-select-7--value']/div[1]");
 	
 	//step3
-	By rating1=By.id("star-1");
-	By rating2=By.id("star-2");
-	By rating3=By.id("star-3");
-	By rating4=By.id("star-4");
-	By rating5=By.id("star-5");
-	By productpricevalurformoney=By.id("rating-price-1");
-	By productpricejsutright=By.id("rating-price-2");
-	By productpricexpensive=By.id("rating-price-3");
-	By packagequalitypoor=By.id("rating-quality-1");
-	By packagequalityimproved=By.id("rating-quality-2");
-	By packagequalityokay=By.id("rating-quality-3");
-	By packagequalitygood=By.id("rating-quality-4");
-	By packagequalityperfect=By.id("rating-quality-5");
-	By repurchaseyes=By.id("repurchase-yes");
-	By repurchaseno=By.id("repurchase-no");
-	By writereview=By.id("review-field");
-	By nextstep3=By.id("product-rating-button-submit");
+	public @FindBy(id ="star-1") WebElement rating1;
+	public @FindBy(id ="star-2") WebElement rating2;
+	public @FindBy(id ="star-3") WebElement rating3;
+	public @FindBy(id ="star-4") WebElement rating4;
+	public @FindBy(id ="star-5") WebElement rating5;
+
+	public @FindBy(id ="rating-price-1") WebElement productpricevalurformoney;
+	public @FindBy(id ="rating-price-2") WebElement productpricejsutright;
+	public @FindBy(id ="rating-price-3") WebElement productpricexpensive;
+	public @FindBy(id ="rating-quality-1") WebElement packagequalitypoor;
+	public @FindBy(id ="rating-quality-2") WebElement packagequalityimproved;
+	public @FindBy(id ="rating-quality-3") WebElement packagequalityokay;
+	public @FindBy(id ="rating-quality-4") WebElement packagequalitygood;
+	public @FindBy(id ="rating-quality-5") WebElement packagequalityperfect;
+	public @FindBy(id ="repurchase-yes") WebElement repurchaseyes;
+	public @FindBy(id ="repurchase-no") WebElement repurchaseno;
+	public @FindBy(id ="review-field") WebElement writereview;
+	public @FindBy(id ="product-rating-button-submit") WebElement nextstep3;
 	
 	//step4
 	By matauang=By.id("react-select-8--value");
@@ -204,19 +205,25 @@ public class addproductpage {
 	
 	//=================================STEP 3======================================//
 	
-	public WebElement chooseRating(){
-		
-		return driver.findElement(rating2);
+	public addproductpage chooseRating() throws Exception {
+
+		rating2.click();
+
+		return new addproductpage();
 	}
 	
-	public WebElement choosePackagequality(){
-		
-		return driver.findElement(packagequalitypoor);
+	public addproductpage choosePackagequality() throws Exception {
+
+		packagequalitypoor.click();
+
+		return new addproductpage();
 	}
 	
-	public WebElement chooseRepurchase(){
-		
-		return driver.findElement(repurchaseyes);
+	public addproductpage chooseRepurchase() throws Exception {
+
+		repurchaseyes.click();
+
+		return new addproductpage();
 	}
 	
 	public WebElement inputWritereview(){

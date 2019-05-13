@@ -241,7 +241,7 @@ public class addProduct extends controller {
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        
        //step 3
-       productpage.chooseRating().click();
+       productpage.chooseRating();
        productpage.choosePackagequality().click();
        productpage.chooseRepurchase().click();
        productpage.inputWritereview().sendKeys("barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus");
