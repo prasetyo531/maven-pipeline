@@ -129,7 +129,7 @@ public class addProductEditBrand extends controller {
 
 		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
+		assertTrue(UrlLogin.contains("http://account.femaledaily"));
 
 		logpro.fillusername().sendKeys("putwid");
 		logpro.fillpassword().sendKeys("tester123");

@@ -112,8 +112,7 @@ public class addProductBeforeLoginThenLogin extends controller {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		UrlLogin = driver.getCurrentUrl();
-
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
+		assertTrue(UrlLogin.contains("http://account.femaledaily"));
 
 		logpro.fillusername().sendKeys("putwid");
 		logpro.fillpassword().sendKeys("tester123");

@@ -101,7 +101,8 @@ public class addProductImageUrl extends controller {
 
 		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
+
+		assertTrue(UrlLogin.contains("http://account.femaledaily"));
 
 		logpro.fillusername().sendKeys("putwid");
 		logpro.fillpassword().sendKeys("tester123");

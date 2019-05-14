@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-09T12:55:43Z" name="Suite" finished-at="2019-05-09T12:56:13Z" duration-ms="30358">
+  <suite started-at="2019-05-14T04:38:32Z" name="Suite" finished-at="2019-05-14T04:38:50Z" duration-ms="18317">
     <groups>
     </groups>
-    <test started-at="2019-05-09T12:55:43Z" name="Test1" finished-at="2019-05-09T12:56:13Z" duration-ms="30358">
+    <test started-at="2019-05-14T04:38:32Z" name="Test1" finished-at="2019-05-14T04:38:50Z" duration-ms="18317">
       <class name="tc_addProduct.addProductImageUrl">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1e800aaa]" started-at="2019-05-09T19:55:43Z" name="setUp" finished-at="2019-05-09T19:55:47Z" duration-ms="4014" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@f5958c9]" started-at="2019-05-14T11:38:32Z" name="setUp" finished-at="2019-05-14T11:38:39Z" duration-ms="7368" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1e800aaa]" started-at="2019-05-09T19:55:47Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-09T19:56:13Z" duration-ms="26007" status="FAIL">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@f5958c9]" started-at="2019-05-14T11:38:40Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-14T11:38:50Z" duration-ms="10349" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -41,16 +41,19 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
+              <![CDATA[expected [http://account.femaledaily] but found [http://account.femaledaily.net/]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at assertObject.assertHome.welcomingpopup(assertHome.java:28)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:116)
+              <![CDATA[java.lang.AssertionError: expected [http://account.femaledaily] but found [http://account.femaledaily.net/]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:134)
+	at org.testng.Assert.assertEquals(Assert.java:115)
+	at org.testng.Assert.assertEquals(Assert.java:189)
+	at org.testng.Assert.assertEquals(Assert.java:199)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:104)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,26 +74,13 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id='__next']/div/div/div[2]/h1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:1434:9f49:8a2f:7c6e%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 22 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductImageUrl@1e800aaa]" started-at="2019-05-09T19:56:13Z" name="tearDown" finished-at="2019-05-09T19:56:13Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductImageUrl@f5958c9]" started-at="2019-05-14T11:38:50Z" name="tearDown" finished-at="2019-05-14T11:38:50Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

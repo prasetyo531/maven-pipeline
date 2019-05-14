@@ -1,15 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 31.169 s <<< FAILURE! - in TestSuite
-scenario_satu(tc_addProduct.addProductImageUrl)  Time elapsed: 26.014 s  <<< FAILURE!
-org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:116)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate an element using By.xpath: //*[@id='__next']/div/div/div[2]/h1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:1434:9f49:8a2f:7c6e%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
-Driver info: driver.version: unknown
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:116)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 19.118 s <<< FAILURE! - in TestSuite
+scenario_satu(tc_addProduct.addProductImageUrl)  Time elapsed: 10.368 s  <<< FAILURE!
+java.lang.AssertionError: expected [http://account.femaledaily] but found [http://account.femaledaily.net/]
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:104)
 

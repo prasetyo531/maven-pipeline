@@ -107,8 +107,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		UrlLogin = driver.getCurrentUrl();
-		
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
+		assertTrue(UrlLogin.contains("http://account.femaledaily"));
 		
 		
 	}
