@@ -23,7 +23,12 @@ public class ConnectDB {
 
 	private static Connection connection = null;
     private static Session session = null;
-    public static ArrayList list = new ArrayList();  
+    public static ArrayList list = new ArrayList();
+
+    //postgreSql
+    private final static String db_url = "jdbc:postgresql://fdn-pg-aurora1.cif0p85z2xpg.ap-southeast-1.rds.amazonaws.com:5432/fdn_com_topic";
+    private final static String user = "serverteam";
+    private final static String user = "DDKW31Kr31";
     
     public static Object get_dataUsername(String query, String database) {
         Connection con = null;
@@ -240,5 +245,49 @@ public class ConnectDB {
           }
           
           return sumpoint;
-      }     
+      }
+
+      //connect talk db - postgreSql
+      public static Object db_talk(String query, String database) {
+          Connection con = null;
+          Statement stmt = null;
+          ResultSet rs = null;
+          Object output = null;
+          try {
+              Class.forName("org.postgresql.Driver");
+
+              switch (database) {
+                  case "prod":
+                      con = (Connection) DriverManager.getConnection("jdbc:postgresql://fdn-pg-aurora1.cif0p85z2xpg.ap-southeast-1.rds.amazonaws.com:5432/fdn_com_talk_prod", "serverteam", "DDKW31Kr31");
+                      break;
+                  case "staging":
+                      con = (Connection) DriverManager.getConnection("jdbc:postgresql://fdn-pg-aurora1.cif0p85z2xpg.ap-southeast-1.rds.amazonaws.com:5432/fdn_com_talk", "serverteam", "DDKW31Kr31");
+                      break;
+                  default:
+                      throw new Exception("No Database with that name");
+              }
+
+              stmt = (Statement) con.createStatement();
+              rs = stmt.executeQuery(query);
+              if (rs.next()) {
+                  output = rs.getObject("body");
+              }
+
+          } catch (Exception e) {
+              return "Error:" + e.getMessage();
+          } finally {
+              try {
+                  rs.close();
+                  stmt.close();
+                  con.close();
+              } catch (SQLException e) {
+                  // TODO Auto-generated catch block
+                  e.printStackTrace();
+              }
+          }
+
+          return output;
+      }
+
+
 }
