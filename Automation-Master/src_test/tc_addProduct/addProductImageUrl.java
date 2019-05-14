@@ -180,7 +180,7 @@ public class addProductImageUrl extends controller {
 
 		productpage.insertProductShade();
 
-		productpage.nextstep2();
+		productpage.nextStep2();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

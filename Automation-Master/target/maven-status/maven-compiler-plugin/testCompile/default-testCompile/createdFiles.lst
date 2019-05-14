@@ -1,2 +1,9 @@
+tc_prodDetail/addCommentReviewPageTwo.class
+tc_categoryList/filterByMultipleBrand.class
+testcase/searchBrand.class
 testcase/hoverProductAlreadyReviewed.class
+tc_categoryList/browseProductAnotherPage.class
 testcase/listeners.class
+tc_createAccount/createAccountUncheckTerms.class
+tc_createAccount/createAccountUsingRegisteredEmail.class
+tc_addProduct/addProductEditStep.class

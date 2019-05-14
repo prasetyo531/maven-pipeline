@@ -192,7 +192,7 @@ public class commentLastAddedProduct extends controller {
 
         productpage.insertProductShade();
 
-        productpage.nextstep2();
+        productpage.nextStep2();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
