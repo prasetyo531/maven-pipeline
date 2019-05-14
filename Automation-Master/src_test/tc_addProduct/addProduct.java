@@ -133,7 +133,7 @@ public class addProduct extends controller {
 		
 		home.clickLogin().click();
 		UrlLogin = driver.getCurrentUrl();
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
 		
 		logpro.fillusername().sendKeys("putwid");
 		logpro.fillpassword().sendKeys("tester123");
@@ -234,7 +234,7 @@ public class addProduct extends controller {
        
        productpage.insertProductName();
 
-       productpage.insertProductShade():
+       productpage.insertProductShade();
        
        productpage.nextStep2();
 

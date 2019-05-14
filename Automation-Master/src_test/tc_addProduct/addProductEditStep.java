@@ -104,7 +104,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		
 		home.clickLogin();
 		UrlLogin = driver.getCurrentUrl();
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
 		
 		logpro.fillusername().sendKeys("putwid");
 		logpro.fillpassword().sendKeys("tester123");
@@ -160,48 +160,35 @@ public static Logger log =LogManager.getLogger(support.class.getName());
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        
        //step 2
-		productpage.selectBrand();
-       
-       WebElement focusprodcat= productpage.selectProductCat(); //xpath megamenu nya  
-       Actions onfocusprodcat = new Actions(driver);
-       onfocusprodcat.moveToElement(focusprodcat).click();
-       onfocusprodcat.sendKeys("frag", Keys.ENTER);
-       onfocusprodcat.build().perform();
 
-       WebElement focusProductSubCat= productpage.insertProductSubCat(); //xpath megamenu nya  
-       Actions onfocusProductSubCat = new Actions(driver);
-       onfocusProductSubCat.moveToElement(focusProductSubCat).click();
-       onfocusProductSubCat.sendKeys("edp", Keys.ENTER);
-       onfocusProductSubCat.build().perform();
-       
-       WebElement focusProductName= productpage.insertProductName(); //xpath megamenu nya  
-       Actions onfocusProductName = new Actions(driver);
-       onfocusProductName.moveToElement(focusProductName).click();
-       onfocusProductName.sendKeys("testing");
-       onfocusProductName.build().perform();
-       
-       WebElement focusProductShade= productpage.insertProductShade(); //xpath megamenu nya  
-       Actions onfocusProductShade = new Actions(driver);
-       onfocusProductShade.moveToElement(focusProductShade).click();
-       onfocusProductShade.sendKeys("female");
-       onfocusProductShade.build().perform();
-       
-       productpage.nextStep2().click();
-       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       productpage.selectBrand();
+
+       productpage.selectProductCat();
+
+       productpage.insertProductSubCat();
+
+       productpage.insertProductName();
+
+       productpage.insertProductShade();
+
+       productpage.nextStep2();
+
+       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        
        //step 3
-       productpage.chooseRating().click();
-       productpage.choosePackagequality().click();
-       productpage.chooseRepurchase().click();
-       productpage.inputWritereview().sendKeys("review by qa, barang barang barang barang barang barang barang barang barang barang barang barang barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus");
-       productpage.nextStep3().click();
-       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       productpage.chooseRating();
+       productpage.choosePackagequality();
+       productpage.chooseRepurchase();
+       productpage.inputWritereview();
+       productpage.nextStep3();
+
+       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        
        //step 4
-       productpage.inputPrice().click();
-       productpage.inputPrice().sendKeys("100000");
-       productpage.inputDescription().click();
-       productpage.inputDescription().sendKeys("add product edit step");
+       productpage.inputPrice();
+       productpage.inputPrice();
+       productpage.inputDescription();
+       productpage.inputDescription();
        
        //edit step 1
        productpage.editStep1().click();
@@ -210,14 +197,14 @@ public static Logger log =LogManager.getLogger(support.class.getName());
        
        //edit step 2
        productpage.editStep2().click();
-       productpage.nextStep2().click();
+       productpage.nextStep2();
        
        //edit step 3
        productpage.editStep3().click();
-       productpage.nextStep3().click();
+       productpage.nextStep3();
        
        //submit
-       productpage.clickSubmit().click();
+       productpage.clickSubmit();
        
        
        UrlPageDetail = driver.getCurrentUrl();

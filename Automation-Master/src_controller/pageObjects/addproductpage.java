@@ -155,7 +155,7 @@ public class addproductpage {
 	
 	public addproductpage selectProductCat() throws Exception {
 
-		WebElement focusprodcat= productcat(); //xpath megamenu nya
+		WebElement focusprodcat= productcat; //xpath megamenu nya
 		Actions onfocusprodcat = new Actions(driver);
 		onfocusprodcat.moveToElement(focusprodcat).click();
 		onfocusprodcat.sendKeys("frag", Keys.ENTER);
@@ -166,7 +166,7 @@ public class addproductpage {
 	
 	public addproductpage insertProductSubCat() throws Exception {
 
-		WebElement focusProductSubCat= productsubcat(); //xpath megamenu nya
+		WebElement focusProductSubCat= productsubcat; //xpath megamenu nya
 		Actions onfocusProductSubCat = new Actions(driver);
 		onfocusProductSubCat.moveToElement(focusProductSubCat).click();
 		onfocusProductSubCat.sendKeys("edp", Keys.ENTER);
@@ -177,10 +177,10 @@ public class addproductpage {
 	
 	public addproductpage insertProductName() throws Exception {
 
-		WebElement focusProductName= productname(); //xpath megamenu nya
+		WebElement focusProductName= productname; //xpath megamenu nya
 		Actions onfocusProductName = new Actions(driver);
 		onfocusProductName.moveToElement(focusProductName).click();
-		onfocusProductName.sendKeys("test name" + faker.name(5).firstName());
+		onfocusProductName.sendKeys("test name" + faker.name().firstName());
 		onfocusProductName.build().perform();
 
 		return new addproductpage();
@@ -188,10 +188,10 @@ public class addproductpage {
 	
 	public addproductpage insertProductShade() throws Exception {
 
-		WebElement focusProductShade= productshade(); //xpath megamenu nya
+		WebElement focusProductShade= productshade; //xpath megamenu nya
 		Actions onfocusProductShade = new Actions(driver);
 		onfocusProductShade.moveToElement(focusProductShade).click();
-		onfocusProductShade.sendKeys("test shade" + faker.name(5).firstName());
+		onfocusProductShade.sendKeys("test shade" + faker.color());
 		onfocusProductShade.build().perform();
 
 		return new addproductpage();

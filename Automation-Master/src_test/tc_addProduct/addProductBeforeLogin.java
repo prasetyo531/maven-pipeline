@@ -108,7 +108,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		
 		UrlLogin = driver.getCurrentUrl();
 		
-		Assert.assertEquals(UrlLogin, "http://account.femaledaily.net/" );	
+		Assert.assertEquals(UrlLogin, "http://account.femaledaily" );
 		
 		
 	}
