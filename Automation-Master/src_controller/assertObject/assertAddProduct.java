@@ -22,7 +22,7 @@ public RemoteWebDriver driver= null;
 	
 	//---------------add product
 	public void attentionmodal(){
-		(new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[value='Yes, I’m sure'")));
+		(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[value='Yes, I’m sure'")));
 	}
 	
 	public void buttonnext1enable(){

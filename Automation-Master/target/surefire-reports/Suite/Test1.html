@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue May 14 11:38:32 WIB 2019</td>
+<td>Started on:</td><td>Tue May 14 11:48:01 WIB 2019</td>
 </tr>
-<tr><td>Total time:</td><td>18 seconds (18317 ms)</td>
+<tr><td>Total time:</td><td>51 seconds (51728 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,21 +76,34 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tc_addProduct.addProductImageUrl.scenario_satu()'><b>scenario_satu</b><br>Test class: tc_addProduct.addProductImageUrl<br>Parameters: myjne003@gmail.com, test123, test123, automationfirst</td>
-<td><div><pre>java.lang.AssertionError: expected [http://account.femaledaily] but found [http://account.femaledaily.net/]
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:104)
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: body &gt; div:nth-child(7) &gt; div &gt; div.jsx-1750402829.modal-add-product-contain &gt; form (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at assertObject.assertHome.modalAddproduct(assertHome.java:46)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:134)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace721531593", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace721531593'><pre>java.lang.AssertionError: expected [http://account.femaledaily] but found [http://account.femaledaily.net/]
-	at org.testng.Assert.fail(Assert.java:93)
-	at org.testng.Assert.failNotEquals(Assert.java:512)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:134)
-	at org.testng.Assert.assertEquals(Assert.java:115)
-	at org.testng.Assert.assertEquals(Assert.java:189)
-	at org.testng.Assert.assertEquals(Assert.java:199)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:104)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: body &gt; div:nth-child(7) &gt; div &gt; div.jsx-1750402829.modal-add-product-contain &gt; form
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;MacBook-Pro-Pras.local&apos;, ip: &apos;fe80:0:0:0:106d:5a3a:c21b:f631%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14&apos;, java.version: &apos;11.0.1&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 22 more
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1387619849", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1387619849'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: body &gt; div:nth-child(7) &gt; div &gt; div.jsx-1750402829.modal-add-product-contain &gt; form (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at assertObject.assertHome.modalAddproduct(assertHome.java:46)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:134)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,9 +124,22 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: body &gt; div:nth-child(7) &gt; div &gt; div.jsx-1750402829.modal-add-product-contain &gt; form
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;MacBook-Pro-Pras.local&apos;, ip: &apos;fe80:0:0:0:106d:5a3a:c21b:f631%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14&apos;, java.version: &apos;11.0.1&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 22 more
 </pre></div></td>
-<td>10</td>
-<td>tc_addProduct.addProductImageUrl@f5958c9</td></tr>
+<td>46</td>
+<td>tc_addProduct.addProductImageUrl@233795b6</td></tr>
 </table><p>
 </body>
 </html>
