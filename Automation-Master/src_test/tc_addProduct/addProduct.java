@@ -238,25 +238,24 @@ public class addProduct extends controller {
        
        productpage.nextStep2();
 
-       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        
        //step 3
        productpage.chooseRating();
-       productpage.choosePackagequality().click();
-       productpage.chooseRepurchase().click();
-       productpage.inputWritereview().sendKeys("barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus barang bagus");
-       productpage.nextStep3().isEnabled();
-       productpage.nextStep3().click();
-       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       productpage.choosePackagequality();
+       productpage.chooseRepurchase();
+       productpage.inputWritereview();
+       productpage.nextStep3();
+
+       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        
        //step 4
-       productpage.inputPrice().click();
-       productpage.inputPrice().sendKeys("100000");
-       productpage.inputDescription().click();
-       productpage.inputDescription().sendKeys("huba huba");
-       
+       productpage.inputPrice();
+       productpage.inputPrice();
+       productpage.inputDescription();
+
        //submit
-       productpage.clickSubmit().click();
+       productpage.clickSubmit();
        
        UrlPageDetail = driver.getCurrentUrl();
        System.out.println(UrlPageDetail);

@@ -60,11 +60,12 @@ public class addproductpage {
 	public @FindBy(id ="product-rating-button-submit") WebElement nextstep3;
 	
 	//step4
-	By matauang=By.id("react-select-8--value");
-	By price=By.id("number-format");
-	By descr=By.id("description-field");
+	public @FindBy(id ="react-select-8--value") WebElement matauang;
+	public @FindBy(id ="number-format") WebElement price;
+	public @FindBy(id ="description-field") WebElement descr;
+	public @FindBy(id ="product-info-button-submit") WebElement submit;
+
 	By producttags=By.xpath("//*[@id='top-page']/div[5]/div[2]/form/div[1]/div[5]");
-	By submit=By.id("product-info-button-submit");
 	
 	//header label
 	By headerstep1=By.xpath("//*[@id='top-page']/div[2]/div[1]/span");
@@ -198,6 +199,7 @@ public class addproductpage {
 	
 	public addproductpage nextStep2() throws Exception {
 
+		nextstep2.isEnabled();
 		nextstep2.click();
 
 		return new addproductpage();
@@ -226,31 +228,45 @@ public class addproductpage {
 		return new addproductpage();
 	}
 	
-	public WebElement inputWritereview(){
-		
-		return driver.findElement(writereview);
+	public addproductpage inputWritereview() throws Exception {
+
+		writereview.sendKeys("test" + faker.lorem().sentence(200));
+
+		return new addproductpage();
 	}
 	
-	public WebElement nextStep3(){
-		
-		return driver.findElement(nextstep3);
+	public addproductpage nextStep3() throws Exception {
+
+		nextstep3.isEnabled();
+		nextstep3.click();
+
+		return new addproductpage();
 	}
 	
 	//=================================STEP 4======================================//
 	
-	public WebElement selectCurency(){
-		
-		return driver.findElement(matauang);
+	public addproductpage selectCurency() throws Exception {
+
+		matauang.click();
+
+		return new addproductpage();
 	}
 	
-	public WebElement inputPrice(){
-		
-		return driver.findElement(price);
+	public addproductpage inputPrice() throws Exception {
+
+		price.click();
+		price.sendKeys("51000");
+
+		return new addproductpage();
 	}
 	
-	public WebElement inputDescription(){
-		
-		return driver.findElement(descr);
+	public addproductpage inputDescription() throws Exception {
+
+		descr.click();
+
+		descr.sendKeys("test" + faker.lorem().sentence(10));
+
+		return new addproductpage();
 	}
 	
 	public WebElement inputTags(){
@@ -258,9 +274,11 @@ public class addproductpage {
 		return driver.findElement(producttags);
 	}
 	
-	public WebElement clickSubmit(){
-		
-		return driver.findElement(submit);
+	public addproductpage clickSubmit() throws Exception {
+
+		submit.click();
+
+		return new addproductpage();
 	}
 	
 	//=================================edit step======================================//
