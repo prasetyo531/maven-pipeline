@@ -28,7 +28,7 @@ public class ConnectDB {
     //postgreSql
     private final static String db_url = "jdbc:postgresql://fdn-pg-aurora1.cif0p85z2xpg.ap-southeast-1.rds.amazonaws.com:5432/fdn_com_topic";
     private final static String user = "serverteam";
-    private final static String user = "DDKW31Kr31";
+    private final static String pass = "DDKW31Kr31";
     
     public static Object get_dataUsername(String query, String database) {
         Connection con = null;

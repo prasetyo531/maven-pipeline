@@ -61,7 +61,7 @@ public class addProductImageUrl extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = controller.getDriver2(browser);
 
 	}
 

@@ -1,58 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-14T04:48:01Z" name="Suite" finished-at="2019-05-14T04:48:53Z" duration-ms="51728">
+  <suite started-at="2019-05-15T04:39:53Z" name="Suite" finished-at="2019-05-15T04:40:48Z" duration-ms="55572">
     <groups>
     </groups>
-    <test started-at="2019-05-14T04:48:01Z" name="Test2" finished-at="2019-05-14T04:48:26Z" duration-ms="24986">
-      <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@2cd76f31]" started-at="2019-05-14T11:48:01Z" name="setUp" finished-at="2019-05-14T11:48:06Z" duration-ms="4602" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@2cd76f31]" started-at="2019-05-14T11:48:06Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-14T11:48:26Z" duration-ms="19704" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[myjne003@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[automationfirst]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@2cd76f31]" started-at="2019-05-14T11:48:26Z" name="tearDown" finished-at="2019-05-14T11:48:26Z" duration-ms="254" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tc_addProduct.addProductBeforeLogin -->
-    </test> <!-- Test2 -->
-    <test started-at="2019-05-14T04:48:01Z" name="Test1" finished-at="2019-05-14T04:48:53Z" duration-ms="51728">
+    <test started-at="2019-05-15T04:39:53Z" name="Test1" finished-at="2019-05-15T04:40:48Z" duration-ms="55331">
       <class name="tc_addProduct.addProductImageUrl">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@233795b6]" started-at="2019-05-14T11:48:01Z" name="setUp" finished-at="2019-05-14T11:48:06Z" duration-ms="4600" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:39:53Z" name="setUp" finished-at="2019-05-15T11:40:02Z" duration-ms="9041" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -63,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@233795b6]" started-at="2019-05-14T11:48:06Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-14T11:48:53Z" duration-ms="46687" status="FAIL">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:40:02Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T11:40:48Z" duration-ms="45891" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -88,14 +43,14 @@
           </params>
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: body > div:nth-child(7) > div > div.jsx-1750402829.modal-add-product-contain > form (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: body > div:nth-child(7) > div > div.jsx-1750402829.modal-add-product-contain > form (tried for 15 second(s) with 500 MILLISECONDS interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at assertObject.assertHome.modalAddproduct(assertHome.java:46)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:134)
+	at assertObject.assertHome.welcomingpopup(assertHome.java:28)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:117)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -116,10 +71,10 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: body > div:nth-child(7) > div > div.jsx-1750402829.modal-add-product-contain > form
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id='__next']/div/div/div[2]/h1
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:106d:5a3a:c21b:f631%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
+System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:18d9:1be5:f0c1:30b6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
 Driver info: driver.version: unknown
 	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
@@ -135,11 +90,90 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductImageUrl@233795b6]" started-at="2019-05-14T11:48:53Z" name="tearDown" finished-at="2019-05-14T11:48:53Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:40:48Z" name="tearDown" finished-at="2019-05-15T11:40:48Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tc_addProduct.addProductImageUrl -->
     </test> <!-- Test1 -->
+    <test started-at="2019-05-15T04:39:53Z" name="Test2" finished-at="2019-05-15T04:40:48Z" duration-ms="55572">
+      <class name="tc_addProduct.addProductBeforeLogin">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:39:53Z" name="setUp" finished-at="2019-05-15T11:40:06Z" duration-ms="13624" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:40:07Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T11:40:48Z" duration-ms="41006" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[myjne003@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationfirst]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at org.testng.Assert.assertTrue(Assert.java:51)
+	at tc_addProduct.addProductBeforeLogin.scenario_satu(addProductBeforeLogin.java:110)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario_satu -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:40:48Z" name="tearDown" finished-at="2019-05-15T11:40:48Z" duration-ms="773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tc_addProduct.addProductBeforeLogin -->
+    </test> <!-- Test2 -->
   </suite> <!-- Suite -->
 </testng-results>

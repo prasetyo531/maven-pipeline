@@ -1,15 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 52.236 s <<< FAILURE! - in TestSuite
-scenario_satu(tc_addProduct.addProductImageUrl)  Time elapsed: 46.703 s  <<< FAILURE!
-org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: body > div:nth-child(7) > div > div.jsx-1750402829.modal-add-product-contain > form (tried for 15 second(s) with 500 MILLISECONDS interval)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:134)
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 56.246 s <<< FAILURE! - in TestSuite
+scenario_satu(tc_addProduct.addProductBeforeLogin)  Time elapsed: 41.09 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at tc_addProduct.addProductBeforeLogin.scenario_satu(addProductBeforeLogin.java:110)
+
+scenario_satu(tc_addProduct.addProductImageUrl)  Time elapsed: 41.576 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:117)
 Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate an element using By.cssSelector: body > div:nth-child(7) > div > div.jsx-1750402829.modal-add-product-contain > form
+Cannot locate an element using By.xpath: //*[@id='__next']/div/div/div[2]/h1
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:106d:5a3a:c21b:f631%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
+System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:18d9:1be5:f0c1:30b6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
 Driver info: driver.version: unknown
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:134)
+	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:117)
 

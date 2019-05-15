@@ -13,4 +13,16 @@
       </class> <!-- tc_addProduct.addProductImageUrl -->
     </classes>
   </test> <!-- Test1(failed) -->
+  <test parallel="tests" name="Test2(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tc_addProduct.addProductBeforeLogin">
+        <methods>
+          <include name="tearDown"/>
+          <include name="scenario_satu" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tc_addProduct.addProductBeforeLogin -->
+    </classes>
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

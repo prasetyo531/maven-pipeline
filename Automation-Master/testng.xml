@@ -8,7 +8,7 @@
         </classes>
     </test>
     <test name="Test2">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tc_addProduct.addProductBeforeLogin"/>
         </classes>
