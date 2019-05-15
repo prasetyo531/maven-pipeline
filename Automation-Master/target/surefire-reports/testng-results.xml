@@ -1,104 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-15T04:39:53Z" name="Suite" finished-at="2019-05-15T04:40:48Z" duration-ms="55572">
+  <suite started-at="2019-05-15T12:50:39Z" name="Suite" finished-at="2019-05-15T12:51:40Z" duration-ms="61243">
     <groups>
     </groups>
-    <test started-at="2019-05-15T04:39:53Z" name="Test1" finished-at="2019-05-15T04:40:48Z" duration-ms="55331">
-      <class name="tc_addProduct.addProductImageUrl">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:39:53Z" name="setUp" finished-at="2019-05-15T11:40:02Z" duration-ms="9041" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:40:02Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T11:40:48Z" duration-ms="45891" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[myjne003@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[automationfirst]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='__next']/div/div/div[2]/h1 (tried for 5 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at assertObject.assertHome.welcomingpopup(assertHome.java:28)
-	at tc_addProduct.addProductImageUrl.scenario_satu(addProductImageUrl.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id='__next']/div/div/div[2]/h1
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:18d9:1be5:f0c1:30b6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 22 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductImageUrl@1fa121e2]" started-at="2019-05-15T11:40:48Z" name="tearDown" finished-at="2019-05-15T11:40:48Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tc_addProduct.addProductImageUrl -->
-    </test> <!-- Test1 -->
-    <test started-at="2019-05-15T04:39:53Z" name="Test2" finished-at="2019-05-15T04:40:48Z" duration-ms="55572">
+    <test started-at="2019-05-15T12:50:39Z" name="Test2" finished-at="2019-05-15T12:51:40Z" duration-ms="61243">
       <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:39:53Z" name="setUp" finished-at="2019-05-15T11:40:06Z" duration-ms="13624" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-15T19:50:39Z" name="setUp" finished-at="2019-05-15T19:51:40Z" duration-ms="61076" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -106,55 +15,52 @@ Driver info: driver.version: unknown
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:40:07Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T11:40:48Z" duration-ms="41006" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[myjne003@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[automationfirst]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Error forwarding the new session Request timed out waiting for a node to become available.
+Command duration or timeout: 60.14 seconds]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:93)
-	at org.testng.Assert.failNotEquals(Assert.java:512)
-	at org.testng.Assert.assertTrue(Assert.java:41)
-	at org.testng.Assert.assertTrue(Assert.java:51)
-	at tc_addProduct.addProductBeforeLogin.scenario_satu(addProductBeforeLogin.java:110)
+              <![CDATA[org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
+Command duration or timeout: 60.14 seconds
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$new$0(JsonWireProtocolResponse.java:53)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$getResponseFunction$2(JsonWireProtocolResponse.java:91)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at resources.controller.getDriver(controller.java:39)
+	at tc_addProduct.addProductBeforeLogin.setUp(addProductBeforeLogin.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:626)
+	at org.testng.TestRunner.run(TestRunner.java:594)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
 	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
 	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
@@ -163,16 +69,151 @@ Driver info: driver.version: unknown
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:18d9:1be5:f0c1:30b6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.grid.web.servlet.handler.RequestHandler.process(RequestHandler.java:118)
+	at org.openqa.grid.web.servlet.DriverServlet.process(DriverServlet.java:85)
+	at org.openqa.grid.web.servlet.DriverServlet.doPost(DriverServlet.java:69)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.seleniumhq.jetty9.servlet.ServletHolder.handle(ServletHolder.java:865)
+	at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+	at org.seleniumhq.jetty9.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+	at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+	at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+	at org.seleniumhq.jetty9.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.seleniumhq.jetty9.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+	at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+	at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.seleniumhq.jetty9.server.Server.handle(Server.java:503)
+	at org.seleniumhq.jetty9.server.HttpChannel.handle(HttpChannel.java:364)
+	at org.seleniumhq.jetty9.server.HttpConnection.onFillable(HttpConnection.java:260)
+	at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+	at org.seleniumhq.jetty9.io.FillInterest.fillable(FillInterest.java:103)
+	at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+	at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+	at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+	at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-15T19:51:40Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T19:51:40Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Error forwarding the new session Request timed out waiting for a node to become available.
+Command duration or timeout: 60.14 seconds]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
+Command duration or timeout: 60.14 seconds
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$new$0(JsonWireProtocolResponse.java:53)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$getResponseFunction$2(JsonWireProtocolResponse.java:91)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at resources.controller.getDriver(controller.java:39)
+	at tc_addProduct.addProductBeforeLogin.setUp(addProductBeforeLogin.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:626)
+	at org.testng.TestRunner.run(TestRunner.java:594)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'MacBook-Pro-Pras.local', ip: 'fe80:0:0:0:18d9:1be5:f0c1:30b6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '11.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.grid.web.servlet.handler.RequestHandler.process(RequestHandler.java:118)
+	at org.openqa.grid.web.servlet.DriverServlet.process(DriverServlet.java:85)
+	at org.openqa.grid.web.servlet.DriverServlet.doPost(DriverServlet.java:69)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.seleniumhq.jetty9.servlet.ServletHolder.handle(ServletHolder.java:865)
+	at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+	at org.seleniumhq.jetty9.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+	at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+	at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+	at org.seleniumhq.jetty9.servlet.ServletHandler.doScope(ServletHandler.java:473)
+	at org.seleniumhq.jetty9.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+	at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+	at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+	at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.seleniumhq.jetty9.server.Server.handle(Server.java:503)
+	at org.seleniumhq.jetty9.server.HttpChannel.handle(HttpChannel.java:364)
+	at org.seleniumhq.jetty9.server.HttpConnection.onFillable(HttpConnection.java:260)
+	at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+	at org.seleniumhq.jetty9.io.FillInterest.fillable(FillInterest.java:103)
+	at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+	at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+	at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+	at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@24269709]" started-at="2019-05-15T11:40:48Z" name="tearDown" finished-at="2019-05-15T11:40:48Z" duration-ms="773" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- tc_addProduct.addProductBeforeLogin -->
     </test> <!-- Test2 -->
   </suite> <!-- Suite -->
