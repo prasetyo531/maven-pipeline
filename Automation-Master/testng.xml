@@ -10,7 +10,7 @@
     <test name="Test2">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="tc_addProduct.addProductBeforeLogin"/>
+            <class name="tc_addProduct.addProduct"/>
         </classes>
     </test>
 </suite> <!-- Suite -->

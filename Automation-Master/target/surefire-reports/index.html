@@ -102,7 +102,7 @@
                     <div class="method-list-content skipped suite-Suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tc_addProduct.addProductBeforeLogin" class="method navigator-link" hash-for-method="scenario_satu">scenario_satu</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tc_addProduct.addProduct" class="method navigator-link" hash-for-method="scenario_satu">scenario_satu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">tc_addProduct.addProductBeforeLogin</span>
+              <span class="class-name">tc_addProduct.addProduct</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -129,7 +129,7 @@
                   </a> <!-- scenario_satu -->
                   <span class="method-name">scenario_satu</span>
                   <div class="stack-trace">org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 60.14 seconds
+Command duration or timeout: 60.23 seconds
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
 	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$new$0(JsonWireProtocolResponse.java:53)
@@ -153,7 +153,7 @@ Command duration or timeout: 60.14 seconds
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:138)
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:175)
 	at resources.controller.getDriver(controller.java:39)
-	at tc_addProduct.addProductBeforeLogin.setUp(addProductBeforeLogin.java:59)
+	at tc_addProduct.addProduct.setUp(addProduct.java:80)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
@@ -216,7 +216,7 @@ Driver info: driver.version: unknown
   &lt;test name=&quot;Test2&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tc_addProduct.addProductBeforeLogin&quot;/&gt;
+      &lt;class name=&quot;tc_addProduct.addProduct&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test2 --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -259,7 +259,7 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenario_satu')
-data.setCell(0, 2, 'tc_addProduct.addProductBeforeLogin')
+data.setCell(0, 2, 'tc_addProduct.addProduct')
 data.setCell(0, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
@@ -291,7 +291,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tc_addProduct.addProductBeforeLogin</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tc_addProduct.addProduct</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <img src="failed.png">
                 </img>

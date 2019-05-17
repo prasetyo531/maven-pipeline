@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-15T12:50:39Z" name="Suite" finished-at="2019-05-15T12:51:40Z" duration-ms="61243">
+  <suite started-at="2019-05-15T12:52:54Z" name="Suite" finished-at="2019-05-15T12:53:58Z" duration-ms="63448">
     <groups>
     </groups>
-    <test started-at="2019-05-15T12:50:39Z" name="Test2" finished-at="2019-05-15T12:51:40Z" duration-ms="61243">
-      <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-15T19:50:39Z" name="setUp" finished-at="2019-05-15T19:51:40Z" duration-ms="61076" status="FAIL">
+    <test started-at="2019-05-15T12:52:54Z" name="Test2" finished-at="2019-05-15T12:53:58Z" duration-ms="63448">
+      <class name="tc_addProduct.addProduct">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProduct@179ece50]" started-at="2019-05-15T19:52:54Z" name="setUp" finished-at="2019-05-15T19:53:58Z" duration-ms="63257" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 60.14 seconds]]>
+Command duration or timeout: 60.23 seconds]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 60.14 seconds
+Command duration or timeout: 60.23 seconds
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -50,7 +50,7 @@ Command duration or timeout: 60.14 seconds
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
 	at resources.controller.getDriver(controller.java:39)
-	at tc_addProduct.addProductBeforeLogin.setUp(addProductBeforeLogin.java:59)
+	at tc_addProduct.addProduct.setUp(addProduct.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -114,15 +114,15 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-15T19:51:40Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T19:51:40Z" duration-ms="0" status="SKIP">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProduct@179ece50]" started-at="2019-05-15T19:53:58Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-15T19:53:58Z" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 60.14 seconds]]>
+Command duration or timeout: 60.23 seconds]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 60.14 seconds
+Command duration or timeout: 60.23 seconds
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -150,7 +150,7 @@ Command duration or timeout: 60.14 seconds
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
 	at resources.controller.getDriver(controller.java:39)
-	at tc_addProduct.addProductBeforeLogin.setUp(addProductBeforeLogin.java:59)
+	at tc_addProduct.addProduct.setUp(addProduct.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -214,7 +214,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-      </class> <!-- tc_addProduct.addProductBeforeLogin -->
+      </class> <!-- tc_addProduct.addProduct -->
     </test> <!-- Test2 -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -92,7 +92,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		driver.manage().window().setSize(new Dimension(1650, 1200));
 
 		//click hamburger
-		home.Hamburger().click();;
+		home.Hamburger().click();
 		
 		home.clickMenuReview().click();
 		asser.waitNewestReview();
