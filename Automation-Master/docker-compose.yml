@@ -1,5 +1,10 @@
 version: '3'
 services:
+  hub:
+    image: selenium/hub:3.9.1-actinium
+    ports:
+    - "4444:4444"
+
   firefox:
     image: selenium/node-firefox:3.9.1-actinium
     volumes:
@@ -8,6 +13,14 @@ services:
       - hub
     environment:
       HUB_HOST: hub
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
 
   chrome:
     image: selenium/node-chrome:3.9.1-actinium
@@ -17,11 +30,23 @@ services:
       - hub
     environment:
       HUB_HOST: hub
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
 
-  hub:
-    image: selenium/hub:3.9.1-actinium
-    ports:
-      - "4444:4444"
+
+  db_sql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: staging_fdbr_salon
+      MYSQL_USER: serverteam
+      MYSQL_PASSWORD: DDKW31Kr31
+
 
 
 

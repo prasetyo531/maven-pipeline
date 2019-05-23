@@ -93,7 +93,7 @@ public class dockerquery extends controller {
         driver.manage().window().setSize(new Dimension(1650, 1200));
 
         //click hamburger
-        home.Hamburger().click();
+        home.clickLogin().click();
 
         String getDataUsername = (String) ConnectDB.get_dataUsername("SELECT username FROM nubr_userappos ORDER BY usrapo_id DESC LIMIT 1", "staging");
 
