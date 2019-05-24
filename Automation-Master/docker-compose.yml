@@ -1,53 +1,47 @@
 version: '3'
+
 services:
-  hub:
-    image: selenium/hub:3.9.1-actinium
+  elgalu:
+    image: elgalu/selenium
+    command: echo 0
+    restart: "no" # ensures it does not get recreated
+
+  dosel:
+    image: dosel/zalenium
+    depends_on:
+    - elgalu
+    command: echo 0
+    restart: "no" # ensures it does not get recreated
+
+  zalenium:
+    image: dosel/zalenium
+    container_name: zalenium
+    depends_on:
+    - dosel
     ports:
     - "4444:4444"
-
-  firefox:
-    image: selenium/node-firefox:3.9.1-actinium
+    restart: unless-stopped
+    tty: true
+    command: ["start", "--desiredContainers", "5", "--maxDockerSeleniumContainers", "10","--sauceLabsEnabled","false","--screenWidth", "1920", "--screenHeight", "1080"]
     volumes:
-      - /dev/shm:/dev/shm
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /Users/mac/Documents/docker-volumes:/home/seluser/videos
+    privileged: true
+    networks:
+      mynetwork:
+        aliases:
+        - chrome
+
+  mock:
+    image: elgalu/google_adwords_mock
     depends_on:
-      - hub
+    - zalenium
+    ports:
+    - 8080:8080
+    tty: true
     environment:
-      HUB_HOST: hub
-    deploy:
-      resources:
-        limits:
-          cpus: '0.001'
-          memory: 50M
-        reservations:
-          cpus: '0.0001'
-          memory: 20M
+    - MOCK_SERVER_PORT=8080
 
-  chrome:
-    image: selenium/node-chrome:3.9.1-actinium
-    volumes:
-      - /dev/shm:/dev/shm
-    depends_on:
-      - hub
-    environment:
-      HUB_HOST: hub
-    deploy:
-      resources:
-        limits:
-          cpus: '0.001'
-          memory: 50M
-        reservations:
-          cpus: '0.0001'
-          memory: 20M
-
-
-  db_sql:
-    image: mysql:5.7
-    environment:
-      MYSQL_DATABASE: staging_fdbr_salon
-      MYSQL_USER: serverteam
-      MYSQL_PASSWORD: DDKW31Kr31
-
-
-
-
-
+networks:
+  mynetwork:
+    driver: bridge
