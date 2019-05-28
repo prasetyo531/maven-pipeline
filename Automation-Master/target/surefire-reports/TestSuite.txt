@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.222 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 74.251 s <<< FAILURE! - in TestSuite
+scenario_satu(tc_addProduct.addProductBeforeLoginThenLogin)  Time elapsed: 50.656 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at tc_addProduct.addProductBeforeLoginThenLogin.scenario_satu(addProductBeforeLoginThenLogin.java:107)
+
