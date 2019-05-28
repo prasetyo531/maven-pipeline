@@ -1,10 +1,5 @@
 package testcase;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
@@ -14,8 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
@@ -44,10 +37,10 @@ import pageObjects.homepage;
 import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class hoverProductListLoggedIn extends controller {
+public class hoverProductListLoggedIn extends Controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -66,7 +59,7 @@ public class hoverProductListLoggedIn extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

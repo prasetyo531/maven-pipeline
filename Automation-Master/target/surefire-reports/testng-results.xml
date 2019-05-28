@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-05-28T04:45:11Z" name="Suite" finished-at="2019-05-28T04:45:32Z" duration-ms="20940">
+    <groups>
+    </groups>
+    <test started-at="2019-05-28T04:45:11Z" name="Test" finished-at="2019-05-28T04:45:32Z" duration-ms="20940">
+      <class name="tc_addProduct.addProductBeforeLogin">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-28T11:45:11Z" name="setUp" finished-at="2019-05-28T11:45:15Z" duration-ms="4498" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-28T11:45:16Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-28T11:45:32Z" duration-ms="15908" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[myjne003@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationfirst]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario_satu -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@6f03482]" started-at="2019-05-28T11:45:32Z" name="tearDown" finished-at="2019-05-28T11:45:32Z" duration-ms="204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tc_addProduct.addProductBeforeLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

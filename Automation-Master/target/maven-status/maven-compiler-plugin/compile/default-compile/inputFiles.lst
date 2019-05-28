@@ -1,5 +1,6 @@
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/profileDetail.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/assertObject/assertHome.java
+/Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/resources/Controller.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/completeProfile.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/assertObject/assertAddProduct.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/homepage.java
@@ -17,6 +18,5 @@
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/resources/support.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/productlist.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/resources/prodName.java
-/Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/resources/controller.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/brandPage.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_controller/assertObject/assertCompProfile.java

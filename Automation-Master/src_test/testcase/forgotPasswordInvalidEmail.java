@@ -2,11 +2,6 @@ package testcase;
 
 import static org.testng.Assert.assertTrue;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
@@ -15,17 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
@@ -46,11 +35,11 @@ import pageObjects.homepage;
 import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
 
-public class forgotPasswordInvalidEmail extends controller {
+public class forgotPasswordInvalidEmail extends Controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -73,7 +62,7 @@ public class forgotPasswordInvalidEmail extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

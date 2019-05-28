@@ -2,11 +2,6 @@ package tc_prodDetail;
 
 import static org.testng.Assert.assertTrue;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
@@ -23,7 +18,6 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -43,10 +37,10 @@ import pageObjects.homepage;
 import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class viewListProductByBrand extends controller {
+public class viewListProductByBrand extends Controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -64,7 +58,7 @@ public class viewListProductByBrand extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

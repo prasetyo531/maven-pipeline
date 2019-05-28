@@ -7,10 +7,10 @@
             <!--<class name="tc_addProduct.addProductImageUrl"/>-->
         <!--</classes>-->
     <!--</test>-->
-    <test name="Test2">
-        <parameter name="browser" value="firefox"/>
+    <test name="Test">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tc_addProduct.dockerquery"/>
+            <class name="tc_addProduct.addProductBeforeLogin"/>
         </classes>
     </test>
 </suite> <!-- Suite -->

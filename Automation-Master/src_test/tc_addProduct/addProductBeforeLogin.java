@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,9 +17,6 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -39,10 +35,10 @@ import pageObjects.ProductPage;
 import pageObjects.addproductpage;
 import pageObjects.homepage;
 import pageObjects.login;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class addProductBeforeLogin extends controller {
+public class addProductBeforeLogin extends Controller {
 	
 public static Logger log =LogManager.getLogger(support.class.getName());
 	
@@ -56,7 +52,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver2(browser);
 		
 	}
 	

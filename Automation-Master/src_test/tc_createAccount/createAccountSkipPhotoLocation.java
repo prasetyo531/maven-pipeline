@@ -2,11 +2,6 @@ package tc_createAccount;
 
 import static org.testng.Assert.assertTrue;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
@@ -44,10 +39,10 @@ import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
 import resources.ConnectDB;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class createAccountSkipPhotoLocation extends controller{
+public class createAccountSkipPhotoLocation extends Controller {
 
 	String productName = "testing";
 	String brandName = "wardah";
@@ -69,7 +64,7 @@ public class createAccountSkipPhotoLocation extends controller{
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

@@ -17,7 +17,7 @@ pageObjects/brandPage.class
 resources/support.class
 pageObjects/categoryPage.class
 resources/prodName.class
-resources/controller.class
 assertObject/assertAddProduct.class
+resources/Controller.class
 resources/ConnectDB.class
 pageObjects/homepage.class

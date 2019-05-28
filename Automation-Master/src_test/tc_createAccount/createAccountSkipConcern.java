@@ -31,13 +31,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import assertObject.assertCompProfile;
-import assertObject.assertHome;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import pageObjects.cartPage;
 import pageObjects.categoryPage;
-import pageObjects.checkoutPage;
 import pageObjects.completeProfile;
 import pageObjects.ProductPage;
 import pageObjects.addproductpage;
@@ -46,10 +44,10 @@ import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
 import resources.ConnectDB;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class createAccountSkipConcern extends controller {
+public class createAccountSkipConcern extends Controller {
 	
 	String productName = "testing";
 	String brandName = "wardah";
@@ -71,7 +69,7 @@ public class createAccountSkipConcern extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

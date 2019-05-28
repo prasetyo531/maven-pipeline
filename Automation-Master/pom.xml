@@ -5,7 +5,7 @@
 	<name>mavenselenium</name>
 	<description>mavenseleniumjenkins</description>
 	<build>
-        <finalName>selenium-docker</finalName>
+        <!--<finalName>selenium-docker</finalName>-->
 		<sourceDirectory>src_controller</sourceDirectory>
 		<testSourceDirectory>src_test</testSourceDirectory>
 		<plugins>

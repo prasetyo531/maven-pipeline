@@ -40,7 +40,6 @@ import jxl.Workbook;
 import pageObjects.completeProfile;
 import pageObjects.cartPage;
 import pageObjects.categoryPage;
-import pageObjects.checkoutPage;
 import pageObjects.ProductPage;
 import pageObjects.addproductpage;
 import pageObjects.homepage;
@@ -48,12 +47,11 @@ import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
 import resources.ConnectDB;
-import resources.controller;
+import resources.Controller;
 import resources.support;
-import assertObject.assertHome;
 import assertObject.assertCompProfile;
 
-public class createAccount extends controller {
+public class createAccount extends Controller {
 	
 	/*
 	 * please make sure
@@ -81,7 +79,7 @@ public class createAccount extends controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	

@@ -2,11 +2,6 @@ package tc_categoryList;
 
 import static org.testng.Assert.assertTrue;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
@@ -43,10 +38,10 @@ import pageObjects.homepage;
 import pageObjects.login;
 import pageObjects.productdetail;
 import pageObjects.productlist;
-import resources.controller;
+import resources.Controller;
 import resources.support;
 
-public class filterByMultipleBrand extends controller {
+public class filterByMultipleBrand extends Controller {
 	
 public static Logger log =LogManager.getLogger(support.class.getName());
 	
@@ -63,7 +58,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = controller.getDriver(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	
