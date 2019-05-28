@@ -52,7 +52,7 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = Controller.getDriver2(browser);
+		driver = Controller.getDriver(browser);
 		
 	}
 	
