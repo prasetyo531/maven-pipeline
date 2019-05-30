@@ -53,7 +53,7 @@ public class addProductBeforeLoginThenLogin extends Controller {
 	@Parameters({ "browser" })
 	public void setUp(String browser) throws IOException {
 		System.out.println("*******************");
-		driver = Controller.getDriver(browser);
+		driver = Controller.getDriver2(browser);
 
 	}
 

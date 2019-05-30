@@ -1,58 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-05-28T06:30:38Z" name="Suite" finished-at="2019-05-28T06:31:51Z" duration-ms="73474">
+  <suite started-at="2019-05-29T09:28:46Z" name="Suite" finished-at="2019-05-29T09:29:22Z" duration-ms="35541">
     <groups>
     </groups>
-    <test started-at="2019-05-28T06:30:38Z" name="Test2" finished-at="2019-05-28T06:31:45Z" duration-ms="66799">
-      <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@49438269]" started-at="2019-05-28T13:30:38Z" name="setUp" finished-at="2019-05-28T13:30:50Z" duration-ms="11857" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@49438269]" started-at="2019-05-28T13:30:50Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-28T13:31:43Z" duration-ms="53040" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[myjne003@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[automationfirst]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@49438269]" started-at="2019-05-28T13:31:43Z" name="tearDown" finished-at="2019-05-28T13:31:45Z" duration-ms="1566" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tc_addProduct.addProductBeforeLogin -->
-    </test> <!-- Test2 -->
-    <test started-at="2019-05-28T06:30:38Z" name="Test" finished-at="2019-05-28T06:31:51Z" duration-ms="73474">
+    <test started-at="2019-05-29T09:28:46Z" name="Test" finished-at="2019-05-29T09:29:22Z" duration-ms="35541">
       <class name="tc_addProduct.addProductBeforeLoginThenLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-28T13:30:38Z" name="setUp" finished-at="2019-05-28T13:30:56Z" duration-ms="18193" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-29T16:28:46Z" name="setUp" finished-at="2019-05-29T16:28:53Z" duration-ms="6498" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -63,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-28T13:30:56Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-28T13:31:47Z" duration-ms="50645" status="FAIL">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-29T16:28:53Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-05-29T16:29:21Z" duration-ms="27617" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -123,7 +78,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-28T13:31:47Z" name="tearDown" finished-at="2019-05-28T13:31:51Z" duration-ms="4423" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLoginThenLogin@5bda8e08]" started-at="2019-05-29T16:29:21Z" name="tearDown" finished-at="2019-05-29T16:29:22Z" duration-ms="1145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

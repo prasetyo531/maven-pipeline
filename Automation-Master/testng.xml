@@ -7,10 +7,10 @@
             <class name="tc_addProduct.addProductBeforeLoginThenLogin"/>
         </classes>
     </test>
-    <test name="Test2">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="tc_addProduct.addProductBeforeLogin"/>
-        </classes>
-    </test>
+    <!--<test name="Test2">-->
+        <!--<parameter name="browser" value="chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="tc_addProduct.addProductBeforeLogin"/>-->
+        <!--</classes>-->
+    <!--</test>-->
 </suite> <!-- Suite -->
