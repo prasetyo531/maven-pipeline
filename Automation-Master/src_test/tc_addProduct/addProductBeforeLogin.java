@@ -98,12 +98,13 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		act.moveToElement(getmenu).perform();
 		
 //		asser.addproducttodisplay();
-		WebElement clickElement= home.clickAddProduct(); //xpath sub megamenu nya
-		act.moveToElement(clickElement).click().perform();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		UrlLogin = driver.getCurrentUrl();
-		assertTrue(UrlLogin.contains("http://account.femaledaily"));
+
+//        WebElement clickElement= home.clickAddProduct(); //xpath sub megamenu nya
+//		act.moveToElement(clickElement).click().perform();
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//
+//		UrlLogin = driver.getCurrentUrl();
+//		assertTrue(UrlLogin.contains("http://account.femaledaily"));
 		
 		
 	}
