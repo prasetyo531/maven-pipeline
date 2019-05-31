@@ -4,7 +4,7 @@
     <test name="Test">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="tc_addProduct.addProductBeforeLoginThenLogin"/>
+            <class name="tc_addProduct.addProductBeforeLogin"/>
         </classes>
     </test>
     <!--<test name="Test2">-->
