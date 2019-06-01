@@ -63,12 +63,12 @@
 				</configuration>
 			</plugin>
 		</plugins>
-        <!-- your plugins, including or not maven-resource-plugin -->
+        <!-- http://maven.apache.org/plugins/maven-resources-plugin/examples/copy-resources.html -->
         <resources>
             <resource>
                 <filtering>true</filtering><!-- if it is neccessary -->
                 <directory>${project.basedir}/src_controller/resources</directory><!-- from -->
-                <targetPath>${project.build.directory}/classes/resources</targetPath><!-- to -->
+                <targetPath>${project.build.directory}/src_controller/resources</targetPath><!-- to -->
                 <includes><!-- what -->
                     <include>data.properties</include>
                 </includes>

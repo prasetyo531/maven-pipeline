@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-06-01T03:50:22Z" name="Suite" finished-at="2019-06-01T03:50:28Z" duration-ms="6648">
+    <groups>
+    </groups>
+    <test started-at="2019-06-01T03:50:22Z" name="Test" finished-at="2019-06-01T03:50:28Z" duration-ms="6648">
+      <class name="tc_addProduct.addProductBeforeLogin">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@158d2680]" started-at="2019-06-01T10:50:22Z" name="setUp" finished-at="2019-06-01T10:50:28Z" duration-ms="6596" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@158d2680]" started-at="2019-06-01T10:50:28Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-06-01T10:50:28Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[jxl.read.biff.BiffException: Unable to recognize OLE stream]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: jxl.read.biff.BiffException: Unable to recognize OLE stream
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:115)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1308)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1036)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1126)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: jxl.read.biff.BiffException: Unable to recognize OLE stream
+	at jxl.read.biff.CompoundFile.<init>(CompoundFile.java:116)
+	at jxl.read.biff.File.<init>(File.java:127)
+	at jxl.Workbook.getWorkbook(Workbook.java:268)
+	at jxl.Workbook.getWorkbook(Workbook.java:253)
+	at tc_addProduct.addProductBeforeLogin.existingCust(addProductBeforeLogin.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+	... 17 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario_satu -->
+      </class> <!-- tc_addProduct.addProductBeforeLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
