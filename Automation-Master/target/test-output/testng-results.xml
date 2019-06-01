@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-06-01T03:50:22Z" name="Suite" finished-at="2019-06-01T03:50:28Z" duration-ms="6648">
+  <suite started-at="2019-06-01T08:18:59Z" name="Suite" finished-at="2019-06-01T08:19:05Z" duration-ms="6313">
     <groups>
     </groups>
-    <test started-at="2019-06-01T03:50:22Z" name="Test" finished-at="2019-06-01T03:50:28Z" duration-ms="6648">
+    <test started-at="2019-06-01T08:18:59Z" name="Test" finished-at="2019-06-01T08:19:05Z" duration-ms="6313">
       <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@158d2680]" started-at="2019-06-01T10:50:22Z" name="setUp" finished-at="2019-06-01T10:50:28Z" duration-ms="6596" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@223191a6]" started-at="2019-06-01T15:18:59Z" name="setUp" finished-at="2019-06-01T15:19:05Z" duration-ms="6216" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@158d2680]" started-at="2019-06-01T10:50:28Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-06-01T10:50:28Z" duration-ms="0" status="SKIP">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@223191a6]" started-at="2019-06-01T15:19:05Z" name="scenario_satu" data-provider="existingCust" finished-at="2019-06-01T15:19:05Z" duration-ms="0" status="SKIP">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[jxl.read.biff.BiffException: Unable to recognize OLE stream]]>
@@ -48,7 +48,7 @@ Caused by: jxl.read.biff.BiffException: Unable to recognize OLE stream
 	at jxl.read.biff.File.<init>(File.java:127)
 	at jxl.Workbook.getWorkbook(Workbook.java:268)
 	at jxl.Workbook.getWorkbook(Workbook.java:253)
-	at tc_addProduct.addProductBeforeLogin.existingCust(addProductBeforeLogin.java:134)
+	at tc_addProduct.addProductBeforeLogin.existingCust(addProductBeforeLogin.java:146)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
