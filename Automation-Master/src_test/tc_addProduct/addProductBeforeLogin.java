@@ -128,8 +128,8 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	@DataProvider	  
 	public Object[][] existingCust() throws Exception {
 	     
-        //FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
-        InputStream filepath = getClass().getResourceAsStream(workingDir+"//Workbook1.xls");
+        FileInputStream filepath = new FileInputStream(workingDir+"//Workbook1.xls");
+        //InputStream filepath = getClass().getResourceAsStream(workingDir+"//Workbook1.xls");
 
 		Workbook wb = Workbook.getWorkbook(filepath);
 		Sheet sheet = wb.getSheet("existing");
