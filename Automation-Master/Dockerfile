@@ -4,10 +4,10 @@ FROM openjdk:8u212-jre-alpine3.9
 # Workspace
 WORKDIR /usr/share/udemy
 
-ADD target/selenium-docker.jar          selenium-docker.jar
-ADD target/selenium-docker-tests.jar    selenium-docker-tests.jar
-ADD target/libs                         libs
-
+ADD target/selenium-docker-1.0.0.jar                                  selenium-docker-1.0.0.jar.jar
+ADD target/selenium-docker-1.0.0-tests.jar                            selenium-docker-1.0.0-tests.jar
+ADD target/libs                                                       libs
+ADD target/src_controller/resources/data.properties                   /src_controller/resources/data.properties
 
 # in case of any other depedency
 # please add that as well
@@ -16,4 +16,4 @@ ADD target/libs                         libs
 ADD testng.xml                           testng.xml
 
 
-ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG $MODULE
+ENTRYPOINT java -cp selenium-docker-1.0.0.jar:selenium-docker-1.0.0-tests.jar:libs/* org.testng.TestNG org.testng.TestNG $MODULE
