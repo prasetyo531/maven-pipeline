@@ -79,7 +79,7 @@
                 <directory>${project.basedir}/src_controller/resources</directory><!-- from -->
                 <targetPath>${project.build.directory}/src_controller/resources</targetPath><!-- to -->
                 <includes><!-- what -->
-                    <include>Controller</include>
+                    <include>Controller.java</include>
                 </includes>
             </resource>
             <resource>
