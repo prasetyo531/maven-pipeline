@@ -7,7 +7,7 @@ WORKDIR /usr/share/udemy
 ADD target/selenium-docker-1.0.0.jar                                  selenium-docker-1.0.0.jar.jar
 ADD target/selenium-docker-1.0.0-tests.jar                            selenium-docker-1.0.0-tests.jar
 ADD target/libs                                                       libs
-ADD target/src_controller/resources/Controller.java                   src_controller/resources/Controller.java
+ADD target/src_controller/resources/Controller                        src_controller/resources/Controller
 ADD target/src_controller/resources/data.properties                   src_controller/resources/data.properties
 
 # in case of any other depedency
