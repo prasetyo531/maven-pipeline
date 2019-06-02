@@ -63,7 +63,7 @@ public class addProductBeforeLogin extends Controller {
 
     }
 
-    @Test(dataProvider = "existingCust")
+    @Test(dataProvider = "getDataApply")
     public void scenario_satu(String email, String password, String alamat, String telepon) throws Exception {
 
         support supp = new support();
@@ -165,4 +165,21 @@ public class addProductBeforeLogin extends Controller {
         filepath.close();
         return Testdata;
     }
+
+    @DataProvider
+    public static Object[][] getDataApply(){
+        Object[][] data = null;
+
+        //kiri for numbers of times testcase must execute
+        //kanan for no parameter you send
+        data = new Object[1][4];
+
+        data[0][0]= "myjne013@gmail.com";
+        data[0][1]= "test123";
+        data[0][2]= "test123";
+        data[0][3]= "automationfirst";
+
+        return data;
+    }
+
 }
