@@ -74,14 +74,14 @@
                 </includes>
             </resource>
             <!--<move controller to dependency image>-->
-            <resource>
-                <filtering>true</filtering><!-- if it is neccessary -->
-                <directory>${project.basedir}/src_controller/resources</directory><!-- from -->
-                <targetPath>${project.build.directory}/src_controller/resources</targetPath><!-- to -->
-                <includes><!-- what -->
-                    <include>Controller.java</include>
-                </includes>
-            </resource>
+            <!--<resource>-->
+                <!--<filtering>true</filtering>&lt;!&ndash; if it is neccessary &ndash;&gt;-->
+                <!--<directory>${project.basedir}/src_controller/resources</directory>&lt;!&ndash; from &ndash;&gt;-->
+                <!--<targetPath>${project.build.directory}/src_controller/resources</targetPath>&lt;!&ndash; to &ndash;&gt;-->
+                <!--<includes>&lt;!&ndash; what &ndash;&gt;-->
+                    <!--<include>Controller.java</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
             <resource>
                 <filtering>true</filtering><!-- if it is neccessary -->
                 <directory>${project.basedir}</directory><!-- from -->
