@@ -18,4 +18,4 @@ ADD target/src_controller/resources/data.properties                  src_control
 ADD testng.xml                           testng.xml
 
 
-ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/* org.testng.TestNG testng.xml
+ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* org.testng.TestNG testng.xml
