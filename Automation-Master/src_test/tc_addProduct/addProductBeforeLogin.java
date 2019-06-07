@@ -44,8 +44,9 @@ import pageObjects.homepage;
 import pageObjects.login;
 //import resources.Controller;
 import resources.Controller;
-import resources.support;
+//import resources.support;
 import configTc.ControllerTest;
+import configTc.support;
 
 public class addProductBeforeLogin extends ControllerTest {
 
