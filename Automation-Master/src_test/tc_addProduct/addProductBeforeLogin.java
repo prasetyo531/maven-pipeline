@@ -42,10 +42,12 @@ import pageObjects.ProductPage;
 import pageObjects.addproductpage;
 import pageObjects.homepage;
 import pageObjects.login;
+//import resources.Controller;
 import resources.Controller;
 import resources.support;
+import configTc.ControllerTest;
 
-public class addProductBeforeLogin extends Controller {
+public class addProductBeforeLogin extends ControllerTest {
 
     public static Logger log = LogManager.getLogger(support.class.getName());
 
@@ -59,7 +61,7 @@ public class addProductBeforeLogin extends Controller {
     @Parameters({"browser"})
     public void setUp(String browser) throws IOException {
         System.out.println("*******************");
-        driver = Controller.getDriver(browser);
+        driver = ControllerTest.getDriver(browser);
 
     }
 
