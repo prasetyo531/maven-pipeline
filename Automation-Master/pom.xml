@@ -7,7 +7,7 @@
 	<build>
         <!--<finalName>selenium-docker</finalName>-->
 		<sourceDirectory>${basedir}/src_controller</sourceDirectory>
-		<testSourceDirectory>${basedir}/src_test</testSourceDirectory>
+		<testSourceDirectory>${basedir}</testSourceDirectory>
 		<plugins>
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>

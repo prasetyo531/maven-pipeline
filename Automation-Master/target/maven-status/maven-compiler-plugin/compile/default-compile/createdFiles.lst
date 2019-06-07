@@ -4,7 +4,6 @@ assertObject/assertHome.class
 pageObjects/ProductPage.class
 pageObjects/productlist.class
 pageObjects/login.class
-resources/ExtentReporterNG.class
 pageObjects/reviewsPage.class
 pageObjects/profileDetail.class
 assertObject/assertCompProfile.class
