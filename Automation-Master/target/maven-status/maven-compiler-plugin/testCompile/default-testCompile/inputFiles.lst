@@ -4,6 +4,7 @@
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_categoryList/browseProductAnotherPage.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_prodDetail/addCommentReviewPageTwo.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_createAccount/createAccountUncheckTerms.java
+/Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/configTc/support.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_addProduct/addProductBeforeLoginThenLogin.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_createAccount/createAccountPasswordLess6.java
 /Users/mac/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_prodDetail/useFilterReviewHairType.java

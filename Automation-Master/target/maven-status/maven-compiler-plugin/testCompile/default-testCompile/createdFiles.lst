@@ -19,6 +19,7 @@ tc_createAccount/createAccountSkipConcern.class
 tc_categoryList/filterByBrand.class
 tc_categoryList/sortingProductList.class
 tc_prodDetail/editReview.class
+configTc/support$HttpResponseCode.class
 tc_createAccount/createAccountUncheckTerms.class
 tc_addProduct/addProductEditStep.class
 testcase/forgotPasswordInvalidEmail.class
@@ -34,6 +35,7 @@ tc_prodDetail/viewListProductByBrand.class
 testcase/hoverProductAlreadyReviewed.class
 tc_prodDetail/useFilterReviewAge.class
 testcase/viewProfileProfileDetail.class
+configTc/support.class
 testcase/hoverProductListLoggedIn.class
 testcase/forgotPassword.class
 testcase/searchBrand.class
