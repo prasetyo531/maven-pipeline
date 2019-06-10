@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-06-08T02:25:13Z" name="Suite" finished-at="2019-06-08T02:26:25Z" duration-ms="71493">
+  <suite started-at="2019-06-10T13:46:27Z" name="Suite" finished-at="2019-06-10T13:47:14Z" duration-ms="46675">
     <groups>
     </groups>
-    <test started-at="2019-06-08T02:25:13Z" name="Test" finished-at="2019-06-08T02:26:25Z" duration-ms="71493">
+    <test started-at="2019-06-10T13:46:27Z" name="Test" finished-at="2019-06-10T13:47:14Z" duration-ms="46675">
       <class name="tc_addProduct.addProductBeforeLogin">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-08T09:25:13Z" name="setUp" finished-at="2019-06-08T09:25:25Z" duration-ms="11342" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-10T20:46:28Z" name="setUp" finished-at="2019-06-10T20:46:39Z" duration-ms="11590" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-08T09:25:25Z" name="scenario_satu" data-provider="getDataApply" finished-at="2019-06-08T09:26:22Z" duration-ms="57054" status="PASS">
+        <test-method signature="scenario_satu(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-10T20:46:39Z" name="scenario_satu" data-provider="getDataApply" finished-at="2019-06-10T20:47:12Z" duration-ms="33247" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,7 +44,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario_satu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-08T09:26:22Z" name="tearDown" finished-at="2019-06-08T09:26:25Z" duration-ms="3051" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tc_addProduct.addProductBeforeLogin@4550bb58]" started-at="2019-06-10T20:47:12Z" name="tearDown" finished-at="2019-06-10T20:47:14Z" duration-ms="1809" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
