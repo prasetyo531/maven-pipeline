@@ -116,7 +116,7 @@ public class addProductBeforeLogin extends ControllerTest {
 //
 		UrlLogin = driver.getCurrentUrl();
 		System.out.println(UrlLogin);
-		assertTrue(UrlLogin.contains("http://account.femaledaily"));
+		assertTrue(UrlLogin.contains("account.femaledaily"));
 
         logpro.fillusername().sendKeys(email);
         logpro.fillpassword().sendKeys(password);
