@@ -124,7 +124,6 @@ public class addProductBeforeLogin extends ControllerTest {
 
         Thread.sleep(3000);
 
-
     }
 
     @AfterMethod
