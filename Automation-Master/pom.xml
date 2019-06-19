@@ -91,6 +91,14 @@
                     <include>Workbook1.xls</include>
                 </includes>
             </resource>
+            <resource>
+                <filtering>true</filtering><!-- if it is neccessary -->
+                <directory>${project.basedir}</directory><!-- from -->
+                <targetPath>${project.build.directory}</targetPath><!-- to -->
+                <includes><!-- what -->
+                    <include>healthcheck.sh</include>
+                </includes>
+            </resource>
         </resources>
 	</build>
 	<dependencies>
