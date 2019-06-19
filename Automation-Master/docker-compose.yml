@@ -32,6 +32,16 @@ services:
         aliases:
         - chrome
 
+  search-module:
+    image: beserk/seleniumgrid:1.0.0 
+    depends_on:
+    - dosel/zalenium
+    environment:
+    - HUB_HOST=hub
+    - BROWSER=firefox
+    - MODULE=testng.xml
+
+
   mock:
     image: elgalu/google_adwords_mock
     depends_on:
