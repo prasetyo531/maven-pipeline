@@ -37,8 +37,6 @@ services:
     depends_on:
     - zalenium
     environment:
-    - HUB_HOST=hub
-    - BROWSER=firefox
     - MODULE=testng.xml
 
 
