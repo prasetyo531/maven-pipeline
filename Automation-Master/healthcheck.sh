@@ -12,7 +12,7 @@ do
 done
 
 # start the java command
-java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* \
+java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* \
     -DHUB_HOST=$HUB_HOST \
     -DBROWSER=$BROWSER \
     org.testng.TestNG $MODULE
