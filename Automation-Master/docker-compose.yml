@@ -33,7 +33,7 @@ services:
         - chrome
 
   search-module:
-    image: vinsdocker/selenium-docker
+    image: beserk/seleniumgrid:1.0.0
     depends_on:
     - zalenium
     environment:

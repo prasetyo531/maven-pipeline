@@ -13,6 +13,4 @@ done
 
 # start the java command
 java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* \
-    -DHUB_HOST=$HUB_HOST \
-    -DBROWSER=$BROWSER \
     org.testng.TestNG $MODULE
