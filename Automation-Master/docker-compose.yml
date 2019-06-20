@@ -33,7 +33,7 @@ services:
         - chrome
 
   search-module:
-    image: beserk/seleniumgrid:1.0.0 
+    image: beserk/seleniumgrid 
     depends_on:
     - zalenium
     environment:
@@ -69,7 +69,7 @@ services:
     # Where our data will be persisted
     volumes:
     - /Users/mac/Documents/docker-volumes/database:/var/lib/mysql
-
-networks:
-  mynetwork:
-    driver: bridge
+#
+#networks:
+#  mynetwork:
+#    driver: bridge
