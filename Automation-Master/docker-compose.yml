@@ -36,9 +36,8 @@ services:
     image: beserk/seleniumgrid:1.0.0 
     depends_on:
     - zalenium
-    environment:
-    - MODULE=testng.xml
-
+#    environment:
+#    - MODULE=testng.xml
 
   mock:
     image: elgalu/google_adwords_mock
