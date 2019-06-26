@@ -13,7 +13,7 @@ public class homepage {
 	By tooltip=By.cssSelector("i[class='jsx-696978944 icon-ic_close close'");
 	
 	// hamburger element
-	By hamburger=By.xpath("//*[@id='__next']/div/div/div[1]/div/div[1]/div[1]/span");
+	By hamburger=By.cssSelector("span[id='id_menuburger']");
 	By reviews=By.linkText("Reviews");
 	//
 	
@@ -53,7 +53,7 @@ public class homepage {
 		
 		return driver.findElement(joinletter);
 	}
-	
+    //*[@id='__next']/div/div/div[1]/div/div[1]/div[1]/span
 	public WebElement letmejoinletter2(){
 		
 		return driver.findElement(joinletterReviewPage);
