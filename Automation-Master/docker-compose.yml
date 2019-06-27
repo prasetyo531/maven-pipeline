@@ -18,6 +18,7 @@ services:
     container_name: zalenium
     depends_on:
     - dosel
+    hostname: myhost
     ports:
     - "4444:4444"
     restart: unless-stopped
