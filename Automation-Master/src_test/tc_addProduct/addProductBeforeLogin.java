@@ -48,7 +48,7 @@ import resources.Controller;
 import configTc.ControllerTest;
 import configTc.support;
 
-public class addProductBeforeLogin extends ControllerTest {
+public class addProductBeforeLogin extends Controller {
 
     public static Logger log = LogManager.getLogger(support.class.getName());
 
