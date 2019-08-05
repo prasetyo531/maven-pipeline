@@ -45,8 +45,8 @@ import pageObjects.homepage;
 import pageObjects.login;
 //import resources.Controller;
 import resources.Controller;
-//import resources.support;
-import configTc.support;
+import resources.support;
+//import configTc.support;
 
 public class addProductBeforeLogin extends Controller {
 
