@@ -43,7 +43,6 @@ import pageObjects.ProductPage;
 import pageObjects.addproductpage;
 import pageObjects.homepage;
 import pageObjects.login;
-//import resources.Controller;
 import resources.Controller;
 import resources.support;
 //import configTc.support;
