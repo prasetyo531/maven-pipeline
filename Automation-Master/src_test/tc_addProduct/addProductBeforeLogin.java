@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import configTc.ControllerTest;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -45,7 +46,6 @@ import pageObjects.login;
 //import resources.Controller;
 import resources.Controller;
 //import resources.support;
-import configTc.ControllerTest;
 import configTc.support;
 
 public class addProductBeforeLogin extends Controller {
