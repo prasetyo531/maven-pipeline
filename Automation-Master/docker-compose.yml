@@ -26,7 +26,7 @@ services:
     command: ["start", "--desiredContainers", "5", "--maxDockerSeleniumContainers", "20","--sauceLabsEnabled","false","--screenWidth", "1920", "--screenHeight", "1080"]
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - /Users/mac/Documents/docker-volumes:/home/seluser/videos
+    - /Users/fdn-prasetyo/Documents/docker-volumes/zalenium:/home/seluser/videos
     privileged: true
     networks:
       mynetwork:
@@ -69,7 +69,7 @@ services:
     - '3306'
     # Where our data will be persisted
     volumes:
-    - /Users/mac/Documents/docker-volumes/database:/var/lib/mysql
+    - /Users/fdn-prasetyo/Documents/docker-volumes/zalenium/database:/var/lib/mysql
 
 networks:
   mynetwork:
