@@ -17,11 +17,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -39,6 +35,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -49,8 +46,6 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 //import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -114,27 +109,28 @@ public class Controller {
 
                 return DesiredCapabilities.firefox();
             case "chrome":
-//                System.out.println("Opening chrome driver");
-//                DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
-//                LoggingPreferences loggingprefs = new LoggingPreferences();
-//                loggingprefs.enable(LogType.BROWSER, Level.ALL);
-//                capabilitiesChrome.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
-//                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true); //handle http
-//                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); //handle ssl
-//
-//                //WindowsUtils.killByName("");
-//
-//                return DesiredCapabilities.chrome();
                 System.out.println("Opening chrome driver");
+                DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
+                LoggingPreferences loggingprefs = new LoggingPreferences();
+                loggingprefs.enable(LogType.BROWSER, Level.ALL);
+                capabilitiesChrome.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
+                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true); //handle http
+                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); //handle ssl
+
+//                String tcname = tc.getCurrentXmlTest().getName();
+//                capabilitiesChrome.setCapability("name", tcname);
+                //WindowsUtils.killByName("");
                 return DesiredCapabilities.chrome();
             case "safari":
-//                System.out.println("Opening safari driver");
-//                DesiredCapabilities capabilitiesSafari = DesiredCapabilities.safari();
-//                capabilitiesSafari.setPlatform(Platform.MAC);
-//                capabilitiesSafari.acceptInsecureCerts();
+                System.out.println("Opening safari driver");
+                DesiredCapabilities capabilitiesSafari = DesiredCapabilities.safari();
+                capabilitiesSafari.setPlatform(Platform.MAC);
+                capabilitiesSafari.acceptInsecureCerts();
+
                 return DesiredCapabilities.safari();
             default:
                 System.out.println("browser : " + browserType + " is invalid, Launching Firefox as browser of choice..");
+
                 return DesiredCapabilities.firefox();
         }
     }
