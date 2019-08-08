@@ -62,7 +62,7 @@ public class Controller {
     public static Properties prop=null;
     public static String workingDir = System.getProperty("user.dir");
 
-    public static final RemoteWebDriver getDriver(String browser) throws IOException {
+    public static final RemoteWebDriver getDriver(String browser, ITestContext tc) throws IOException {
 
         prop= new Properties();
         FileInputStream fis=new FileInputStream(workingDir+"//src_controller//resources//data.properties");
@@ -70,7 +70,7 @@ public class Controller {
         prop.load(fis);
         String url1=prop.getProperty("machine1");
 
-        return new RemoteWebDriver(new URL(url1), getBrowserCapabilities(browser));
+        return new RemoteWebDriver(new URL(url1), getBrowserCapabilities(browser, tc));
     }
 
     public static final RemoteWebDriver getDriver2(String browser2) throws IOException {
@@ -95,7 +95,7 @@ public class Controller {
         return new RemoteWebDriver(new URL(url3), getBrowserCapabilities3(browser3));
     }
 
-    private static DesiredCapabilities getBrowserCapabilities(String browserType) {
+    private static DesiredCapabilities getBrowserCapabilities(String browserType, ITestContext tc) {
         switch (browserType) {
             case "firefox":
                 System.out.println("Opening firefox driver");
@@ -117,8 +117,8 @@ public class Controller {
                 capabilitiesChrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true); //handle http
                 capabilitiesChrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); //handle ssl
 
-//                String tcname = tc.getCurrentXmlTest().getName();
-//                capabilitiesChrome.setCapability("name", tcname);
+                String tcname = tc.getCurrentXmlTest().getName();
+                capabilitiesChrome.setCapability("name", tcname);
                 //WindowsUtils.killByName("");
                 return DesiredCapabilities.chrome();
             case "safari":
