@@ -16,6 +16,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -54,13 +55,13 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 	public String nameReviewer = null;
 	public String countFollower = null;
 	public String coungFollowing = null;
-	
+
 	@BeforeTest
-	@Parameters({ "browser" })
-	public void setUp(String browser) throws IOException {
+	@Parameters({"browser"})
+	public void setUp(String browser, ITestContext tc) throws IOException {
 		System.out.println("*******************");
-		driver = Controller.getDriver(browser);
-		
+		driver = Controller.getDriver(browser, tc);
+
 	}
 	
 	@Test(dataProvider="existingCust")

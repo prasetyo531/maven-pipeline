@@ -19,6 +19,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -58,15 +59,14 @@ public class loadPreviousComment extends Controller {
 	public String UrlProdDetPage3 = null;
 	public String UrlProdDetPagePrev = null;
 	public String UrlProdDetPageNext = null;
-	
-	
+
 	@BeforeTest
-	@Parameters({ "browser" })
-	public void setUp(String browser) throws IOException {
+	@Parameters({"browser"})
+	public void setUp(String browser, ITestContext tc) throws IOException {
 		System.out.println("*******************");
-		driver = Controller.getDriver(browser);
-		
-		}
+		driver = Controller.getDriver(browser, tc);
+
+	}
 	
 	@Test(dataProvider="existingCust")
 	public void scenario_satu(String email,String password,String alamat,String telepon) throws Exception {
