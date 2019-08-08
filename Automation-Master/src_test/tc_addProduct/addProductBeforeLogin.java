@@ -23,11 +23,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import assertObject.assertAddProduct;
 import assertObject.assertHome;
@@ -58,11 +54,18 @@ public class addProductBeforeLogin extends Controller {
 
     public String UrlLogin = null;
 
+    @BeforeSuite
+    public void startTest(final ITestContext testContext) {
+        String suitename = testContext.getCurrentXmlTest().getName();
+        System.out.println(suitename); // it prints "Check name test"
+    }
+
     @BeforeTest
     @Parameters({"browser"})
-    public void setUp(String browser, ITestContext tc) throws IOException {
+    public void setUp(String browser, ITestContext suitename) throws IOException {
         System.out.println("*******************");
-        driver = Controller.getDriver(browser, tc);
+        suitename.getCurrentXmlTest().getName();
+        driver = Controller.getDriver(browser, suitename);
 
     }
 
