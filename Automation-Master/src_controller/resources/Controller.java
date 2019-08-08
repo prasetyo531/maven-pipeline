@@ -119,6 +119,7 @@ public class Controller {
 
                 String tcname = tc.getCurrentXmlTest().getName();
                 capabilitiesChrome.setCapability("name", tcname);
+                System.out.println(tcname);
                 //WindowsUtils.killByName("");
                 return DesiredCapabilities.chrome();
             case "safari":

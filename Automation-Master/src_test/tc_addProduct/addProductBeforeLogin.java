@@ -60,16 +60,9 @@ public class addProductBeforeLogin extends Controller {
 
     @BeforeTest
     @Parameters({"browser"})
-<<<<<<< HEAD
-    public void setUp(String browser, ITestContext testContext) throws IOException {
-        System.out.println("*******************");
-        driver = Controller.getDriver(browser);
-        System.out.println(testContext.getName());
-=======
     public void setUp(String browser, ITestContext tc) throws IOException {
         System.out.println("*******************");
         driver = Controller.getDriver(browser, tc);
->>>>>>> 412262dc4754a5b287cc51c7775e24218fbd7f46
 
     }
 
