@@ -58,8 +58,9 @@ public class addProductBeforeLogin extends Controller {
     @Parameters({"browser"})
     public void setUp(String browser, ITestContext suitename) throws IOException {
         System.out.println("*******************");
-        suitename.getCurrentXmlTest().getName();
+//        suitename.getCurrentXmlTest().getName();
         driver = Controller.getDriver(browser, suitename);
+        System.out.println(suitename);
 
     }
 

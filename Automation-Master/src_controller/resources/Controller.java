@@ -29,6 +29,7 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -110,21 +111,23 @@ public class Controller {
                 return DesiredCapabilities.firefox();
             case "chrome":
                 System.out.println("Opening chrome driver");
-                DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
+                DesiredCapabilities capabilitiesChrome = new DesiredCapabilities();
                 LoggingPreferences loggingprefs = new LoggingPreferences();
                 loggingprefs.enable(LogType.BROWSER, Level.ALL);
+                capabilitiesChrome.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
                 capabilitiesChrome.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
                 capabilitiesChrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true); //handle http
                 capabilitiesChrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); //handle ssl
 
                 String tcname = tc.getCurrentXmlTest().getName();
-                capabilitiesChrome.setCapability("name", tcname);
+                capabilitiesChrome.setCapability("name", "myTestName");
                 System.out.println(tcname);
                 //WindowsUtils.killByName("");
                 return DesiredCapabilities.chrome();
             case "safari":
                 System.out.println("Opening safari driver");
-                DesiredCapabilities capabilitiesSafari = DesiredCapabilities.safari();
+                DesiredCapabilities capabilitiesSafari = new DesiredCapabilities();
+                capabilitiesSafari.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
                 capabilitiesSafari.setPlatform(Platform.MAC);
                 capabilitiesSafari.acceptInsecureCerts();
 
