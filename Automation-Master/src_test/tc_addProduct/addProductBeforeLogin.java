@@ -1,5 +1,6 @@
 package tc_addProduct;
 
+import static org.openqa.selenium.remote.RemoteWebDriver.*;
 import static org.testng.Assert.assertTrue;
 
 import java.io.*;
@@ -15,6 +16,7 @@ import jxl.Workbook;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.CellType;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -48,7 +50,7 @@ public class addProductBeforeLogin extends Controller {
 
     public static Logger log = LogManager.getLogger(support.class.getName());
 
-    public static RemoteWebDriver driver = null;
+    public RemoteWebDriver driver = null;
     public static WebElement main = null;
     public static Properties prop = null;
 
@@ -111,16 +113,19 @@ public class addProductBeforeLogin extends Controller {
 		act.moveToElement(clickElement).click().perform();
 
 		Thread.sleep(3000);
-//
+
 		UrlLogin = driver.getCurrentUrl();
 		System.out.println(UrlLogin);
-		assertTrue(UrlLogin.contains("account.femaledaily"));
+		assertTrue(UrlLogin.contains("accsddsdsount.femaledaily"));
+
+        Cookie cookie = new Cookie("zaleniumTestPassed", "false");
+        driver.manage().addCookie(cookie);
 
         logpro.fillusername().sendKeys(email);
         logpro.fillpassword().sendKeys(password);
         logpro.clickbuttonlogin().click();
-
-        Thread.sleep(3000);
+//
+//        Thread.sleep(3000);
 
     }
 
