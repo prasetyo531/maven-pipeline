@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -171,13 +172,41 @@ public static Logger log =LogManager.getLogger(support.class.getName());
 		Assert.assertEquals(textDescGetEdit, textDescAfterEdit);
 		
 	}
-	
+
 	@AfterMethod
-	public void tearDown() {
-		if(driver!=null) {
-			System.out.println("Closing browser");
-			//driver.close();
+	public void afterMethod(ITestResult result)
+	{
+		try
+		{
+			if(result.getStatus() == ITestResult.SUCCESS)
+			{
+
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "true");
+				driver.manage().addCookie(cookie);
+				System.out.println("passed **********");
+			}
+
+			else if(result.getStatus() == ITestResult.FAILURE)
+			{
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "false");
+				driver.manage().addCookie(cookie);
+				System.out.println("Failed ***********");
+
+			}
+
+			else if(result.getStatus() == ITestResult.SKIP ){
+
+				System.out.println("Skiped***********");
+
+			}
 		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 	
 	public void ExtractJSLogs() {

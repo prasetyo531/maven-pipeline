@@ -17,6 +17,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -117,13 +118,41 @@ public class createAccountUsingRegisteredEmail extends Controller {
 		String errormessage = logpro.GetWarningMessage().getText();
 		Assert.assertEquals(errormessage, "Email already registered");
 	}
-	
+
 	@AfterMethod
-	public void tearDown() {
-		if(driver!=null) {
-			System.out.println("Closing browser");
-			//driver.close();
+	public void afterMethod(ITestResult result)
+	{
+		try
+		{
+			if(result.getStatus() == ITestResult.SUCCESS)
+			{
+
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "true");
+				driver.manage().addCookie(cookie);
+				System.out.println("passed **********");
+			}
+
+			else if(result.getStatus() == ITestResult.FAILURE)
+			{
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "false");
+				driver.manage().addCookie(cookie);
+				System.out.println("Failed ***********");
+
+			}
+
+			else if(result.getStatus() == ITestResult.SKIP ){
+
+				System.out.println("Skiped***********");
+
+			}
 		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 	
 	public void ExtractJSLogs() {

@@ -25,6 +25,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import assertObject.assertAddProduct;
@@ -116,25 +117,47 @@ public class addProductBeforeLogin extends Controller {
 
 		UrlLogin = driver.getCurrentUrl();
 		System.out.println(UrlLogin);
-		assertTrue(UrlLogin.contains("accsddsdsount.femaledaily"));
-
-        Cookie cookie = new Cookie("zaleniumTestPassed", "false");
-        driver.manage().addCookie(cookie);
+		assertTrue(UrlLogin.contains("account.femaledaily"));
 
         logpro.fillusername().sendKeys(email);
         logpro.fillpassword().sendKeys(password);
         logpro.clickbuttonlogin().click();
-//
-//        Thread.sleep(3000);
-
     }
 
     @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            System.out.println("Closing browser");
-            driver.close();
+    public void afterMethod(ITestResult result)
+    {
+        try
+        {
+            if(result.getStatus() == ITestResult.SUCCESS)
+            {
+
+                //Do something here
+                Cookie cookie = new Cookie("zaleniumTestPassed", "true");
+                driver.manage().addCookie(cookie);
+                System.out.println("passed **********");
+            }
+
+            else if(result.getStatus() == ITestResult.FAILURE)
+            {
+                //Do something here
+                Cookie cookie = new Cookie("zaleniumTestPassed", "false");
+                driver.manage().addCookie(cookie);
+                System.out.println("Failed ***********");
+
+            }
+
+            else if(result.getStatus() == ITestResult.SKIP ){
+
+                System.out.println("Skiped***********");
+
+            }
         }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     public void ExtractJSLogs() {

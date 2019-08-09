@@ -11,16 +11,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -242,11 +240,39 @@ public class addProductEditBrand extends Controller {
 	}
 
 	@AfterMethod
-	public void tearDown() {
-		if(driver!=null) {
-			System.out.println("Closing browser");
-//			driver.close();
+	public void afterMethod(ITestResult result)
+	{
+		try
+		{
+			if(result.getStatus() == ITestResult.SUCCESS)
+			{
+
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "true");
+				driver.manage().addCookie(cookie);
+				System.out.println("passed **********");
+			}
+
+			else if(result.getStatus() == ITestResult.FAILURE)
+			{
+				//Do something here
+				Cookie cookie = new Cookie("zaleniumTestPassed", "false");
+				driver.manage().addCookie(cookie);
+				System.out.println("Failed ***********");
+
+			}
+
+			else if(result.getStatus() == ITestResult.SKIP ){
+
+				System.out.println("Skiped***********");
+
+			}
 		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 
 	public void ExtractJSLogs() {
