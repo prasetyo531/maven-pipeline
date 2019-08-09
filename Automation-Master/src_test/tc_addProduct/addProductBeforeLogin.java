@@ -54,12 +54,6 @@ public class addProductBeforeLogin extends Controller {
 
     public String UrlLogin = null;
 
-    @BeforeSuite
-    public void startTest(final ITestContext testContext) {
-        String suitename = testContext.getCurrentXmlTest().getName();
-        System.out.println(suitename); // it prints "Check name test"
-    }
-
     @BeforeTest
     @Parameters({"browser"})
     public void setUp(String browser, ITestContext suitename) throws IOException {
