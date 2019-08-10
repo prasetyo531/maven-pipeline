@@ -96,17 +96,11 @@ public class Controller {
         return new RemoteWebDriver(new URL(url3), getBrowserCapabilities3(browser3));
     }
 
-    private static DesiredCapabilities getBrowserCapabilities(String browserType, ITestContext tc) {
+/*    private static DesiredCapabilities getBrowserCapabilities(String browserType, ITestContext tc) {
         switch (browserType) {
             case "firefox":
                 System.out.println("Opening firefox driver");
                 FirefoxProfile profile = new FirefoxProfile();
-//			try {
-//				JavaScriptError.addExtension(profile);
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 
                 return DesiredCapabilities.firefox();
             case "chrome":
@@ -137,6 +131,59 @@ public class Controller {
 
                 return DesiredCapabilities.firefox();
         }
+    }*/
+
+    private static DesiredCapabilities getBrowserCapabilities(String browserType, ITestContext tc) {
+
+        try{
+            if(browserType.equalsIgnoreCase("chrome")){
+                System.out.println("Opening chrome driver");
+
+                DesiredCapabilities capabilitiesChrome = new DesiredCapabilities();
+                LoggingPreferences loggingprefs = new LoggingPreferences();
+                loggingprefs.enable(LogType.BROWSER, Level.ALL);
+                capabilitiesChrome.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+                capabilitiesChrome.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
+                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true); //handle http
+                capabilitiesChrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); //handle ssl
+
+                String tcname = tc.getCurrentXmlTest().getName();
+                capabilitiesChrome.setCapability("name",tcname);
+                System.out.println(tcname);
+
+                return DesiredCapabilities.chrome();
+            } else if(browserType.equalsIgnoreCase("firefox")){
+                System.out.println("Opening firefox driver");
+
+                DesiredCapabilities capabilitiesFirefox = new DesiredCapabilities();
+                LoggingPreferences loggingprefs = new LoggingPreferences();
+                loggingprefs.enable(LogType.BROWSER, Level.ALL);
+                capabilitiesFirefox.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
+
+                String tcname = tc.getCurrentXmlTest().getName();
+                capabilitiesFirefox.setCapability("name",tcname);
+                System.out.println(tcname);
+
+                return DesiredCapabilities.firefox();
+            } else if(browserType.equalsIgnoreCase("safari")){
+                System.out.println("Opening safari driver");
+                DesiredCapabilities capabilitiesSafari = new DesiredCapabilities();
+                capabilitiesSafari.setCapability(CapabilityType.BROWSER_NAME, BrowserType.SAFARI);
+                capabilitiesSafari.setPlatform(Platform.MAC);
+                capabilitiesSafari.acceptInsecureCerts();
+
+                String tcname = tc.getCurrentXmlTest().getName();
+                capabilitiesSafari.setCapability("name",tcname);
+                System.out.println(tcname);
+
+                return DesiredCapabilities.safari();
+            }
+
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return DesiredCapabilities.chrome();
     }
 
     private static DesiredCapabilities getBrowserCapabilities2(String browserType2) {
