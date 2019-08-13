@@ -28,5 +28,4 @@ ADD healthcheck.sh                       healthcheck.sh
 #ENTRYPOINT sh healthcheck.sh
 
 #ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* org.testng.TestNG testng.xml
-#ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* org.testng.TestNG $MODULE
-ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* -machine1=$machine1 org.testng.TestNG $MODULE
+ENTRYPOINT java -cp seleniumDocker-1.0.0.jar:seleniumDocker-1.0.0-tests.jar:libs/*:classes:*resources/* org.testng.TestNG $MODULE
