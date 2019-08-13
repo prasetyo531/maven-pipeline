@@ -37,6 +37,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -133,6 +134,7 @@ public class Controller {
         }
     }*/
 
+    @BeforeTest
     private static DesiredCapabilities getBrowserCapabilities(String browserType, ITestContext tc) {
 
         try{
