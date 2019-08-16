@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mavenjob" />
+        <module name="seleniumDocker" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mavenjob" target="1.8" />
+      <module name="seleniumDocker" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

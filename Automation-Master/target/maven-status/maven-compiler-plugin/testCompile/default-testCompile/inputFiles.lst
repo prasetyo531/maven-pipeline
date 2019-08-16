@@ -22,11 +22,9 @@
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_createAccount/createAccountUsingRegisteredEmail.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_prodDetail/useFilterReviewAge.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_createAccount/createAccountUncheckTerms.java
-/Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/configTc/ControllerTest.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_prodDetail/addReviewGuest.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_controller/pageObjects/profileDetail.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/java/pageObjects/LandingPage.java
-/Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/configTc/support.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/testcase/hoverProductListGuest.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/tc_createAccount/createAccountConfirmPasswordDifferent.java
 /Users/fdn-prasetyo/Documents/Automation/maven-pipeline/Automation-Master/src_test/testcase/nyoba.java
