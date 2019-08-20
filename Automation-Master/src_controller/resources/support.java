@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Random;
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -18,13 +16,15 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
+//import org.apache.commons.io.FileUtils;
+
 public class support {
 
 	public static RemoteWebDriver driver= null;
 	public static WebElement main= null;
 	public static String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	
-	
+	/*
 	public void getFailedScreenshot(String result) throws IOException{
 		
 		driver = (RemoteWebDriver) new Augmenter().augment(driver);
@@ -33,6 +33,7 @@ public class support {
 		    FileUtils.copyFile(srcFile, new File("//Users//mac//Documents//File//Screenshot automation//Fail//skrin.png"));
 		
 	}
+	 */
 	
 	public class HttpResponseCode {
 		 
