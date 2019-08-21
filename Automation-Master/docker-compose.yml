@@ -35,7 +35,6 @@ services:
 
 #  search-module:
 #    image: beserk/seleniumgrid:1.0.0
-##    image: beserk/seleniumgridhs
 #    depends_on:
 #    - zalenium
 #    environment:
