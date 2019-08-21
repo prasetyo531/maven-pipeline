@@ -13,7 +13,7 @@ public class homepage {
 	By tooltip=By.cssSelector("i[class='jsx-696978944 icon-ic_close close'");
 	
 	// hamburger element
-	By hamburger=By.cssSelector("span[id='id_menuburger']");
+	By hamburger=By.cssSelector("span[id='id_menuburger_home']");
 	By reviews=By.linkText("Reviews");
 	//
 	
