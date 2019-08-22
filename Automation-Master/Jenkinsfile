@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage("Pull Latest Image"){
 			steps{
-				sh "docker pull beserk/seleniumgrid:1.0.0"
+				sh "docker pull beserk/seleniumgrid"
 			}
 		}
 		stage("Start Grid"){
