@@ -22,6 +22,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -60,7 +61,7 @@ public class addProductBeforeLogin extends Controller {
     @Parameters({"browser"})
     public void setUp(String browser, ITestContext suitename) throws IOException {
         System.out.println("*******************");
-        suitename.getCurrentXmlTest().getName();
+
         driver = Controller.getDriver(browser, suitename);
         System.out.println(suitename);
 
