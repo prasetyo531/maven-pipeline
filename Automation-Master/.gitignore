@@ -1,2 +1,14 @@
-/bin/
-/target/
+# file: ~/.gitignore_global
+.DS_Store
+*.jpg
+.imgs
+.idea
+.output
+.classpath
+.project
+.settings
+*.iml
+#ignore folder
+output/
+test-output/
+target/
