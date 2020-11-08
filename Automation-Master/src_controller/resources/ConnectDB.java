@@ -30,11 +30,11 @@ public class ConnectDB {
     private final static String user = "serverteam";
     private final static String pass = "DDKW31Kr31";
     
-    public static Object get_dataUsername(String query, String database, Object username) {
+    public static Object get_dataUsername(String query, String database) {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
-        //Object username = null;
+        Object username = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
